@@ -60,10 +60,16 @@ ____________________________________________
 - Fully automatic script 
 - Full Orders For Various Services  
 - Link Account Crate Protocol
-- Format OpenClash
-- Xray Vmess Ws Yaml      : Yes
-- Xray Vless Ws Yaml      : Yes
-- Xray Trojan Ws Yaml      : Yes
+- Supord OpenClash
+- Supord STB
+- Panel Install RDP
+- Panel Install Bot tele
+- Panel Install Vesta
+- Panel Install Webuzo
+- Panel Install Cyberpanell
+- Panel Install Webmin
+- Panel Install Rodektil
+- Masih Banyak Sebenrnya Cuman mls di tambahin Kaya Dudos attack dll
 
 
 ---
