@@ -237,19 +237,19 @@ gg="AM"
 fi
 curl -sS ifconfig.me > /etc/myipvps
 echo " "
-echo "=====================-[ OTTIN NETWORK ]-===================="
+echo "=====================-[ SISTEM NETWORK ]-===================="
 echo ""
 echo "------------------------------------------------------------"
 echo ""
 echo ""
 echo "   >>> Service & Port"  | tee -a log-install.txt
-echo "   - OpenSSH		       : 22"  | tee -a log-install.txt
+echo "   - OpenSSH		   : 22"  | tee -a log-install.txt
 echo "   - SSH Websocket	   : 80 [OFF]" | tee -a log-install.txt
-echo "   - SSH SSL Websocket   : 443" | tee -a log-install.txt
-echo "   - Stunnel4		       : 447, 777" | tee -a log-install.txt
-echo "   - Dropbear		       : 109, 143" | tee -a log-install.txt
-echo "   - Badvpn		       : 7100-7900" | tee -a log-install.txt
-echo "   - Nginx		       : 81" | tee -a log-install.txt
+echo "   - SSH SSL Websocket       : 443" | tee -a log-install.txt
+echo "   - Stunnel4		   : 447, 777" | tee -a log-install.txt
+echo "   - Dropbear		   : 109, 143" | tee -a log-install.txt
+echo "   - Badvpn		   : 7100-7900" | tee -a log-install.txt
+echo "   - Nginx		   : 81" | tee -a log-install.txt
 echo "   - Vmess TLS		   : 443" | tee -a log-install.txt
 echo "   - Vmess None TLS	   : 80" | tee -a log-install.txt
 echo "   - Vmess Grpc		   : 443" | tee -a log-install.txt
@@ -257,20 +257,20 @@ echo "   - Vless TLS		   : 443" | tee -a log-install.txt
 echo "   - Vless None TLS	   : 80" | tee -a log-install.txt
 echo "   - Vless Grpc		   : 443" | tee -a log-install.txt
 echo "   - Trojan WS TLS	   : 443" | tee -a log-install.txt
-echo "   - Trojan WS none TLS  : 80" | tee -a log-install.txt
+echo "   - Trojan WS none TLS      : 80" | tee -a log-install.txt
 echo "   - Trojan Grpc  	   : 443" | tee -a log-install.txt
-echo "   - Shadowsocks WS TLS  : 443" | tee -a log-install.txt
-echo "   - Shadowsocks none TLS: 80" | tee -a log-install.txt
+echo "   - Shadowsocks WS TLS      : 443" | tee -a log-install.txt
+echo "   - Shadowsocks none TLS.   : 80" | tee -a log-install.txt
 echo "   - Shadowsocks Grpc	   : 443" | tee -a log-install.txt
 echo "   - Trojan Go		   : 443" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "   >>> Server Information & Other Features"  | tee -a log-install.txt
-echo "   - Timezone		       : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
-echo "   - Fail2Ban		       : [ON]"  | tee -a log-install.txt
-echo "   - Dflate		       : [ON]"  | tee -a log-install.txt
-echo "   - IPtables		       : [ON]"  | tee -a log-install.txt
+echo "   - Timezone		   : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
+echo "   - Fail2Ban		   : [ON]"  | tee -a log-install.txt
+echo "   - Dflate		   : [ON]"  | tee -a log-install.txt
+echo "   - IPtables		   : [ON]"  | tee -a log-install.txt
 echo "   - Auto-Reboot		   : [ON]"  | tee -a log-install.txt
-echo "   - IPv6			       : [OFF]"  | tee -a log-install.txt
+echo "   - IPv6			   : [OFF]"  | tee -a log-install.txt
 echo "   - Autoreboot On	   : $aureb:00 $gg GMT +7" | tee -a log-install.txt
 echo "   - AutoKill Multi Login User" | tee -a log-install.txt
 echo "   - Auto Delete Expired Account" | tee -a log-install.txt
@@ -283,7 +283,7 @@ echo ""
 echo ""
 echo "------------------------------------------------------------"
 echo ""
-echo "===============-[ Script Created By ADAM SIJA ]-==============="
+echo "===============-[ Script Created By JENGKOLONLINE ]-==============="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
