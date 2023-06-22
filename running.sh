@@ -99,6 +99,14 @@ if [[ $nginx == "running" ]]; then
 else
     status_nginx="${RED}No Running${NC} ( Eror )"
 fi
+# // Trojan GO
+trgo="$(systemctl show trojan-go.service --no-page)"                                      
+strgo=$(echo "${trgo}" | grep 'ActiveState=' | cut -f2 -d=)
+if [[ $strgo == "running" ]]; then
+    status_go="${GREEN}Running${NC} ( No Eror )"
+else
+    status_go="${RED}No Running${NC} ( Eror )"
+fi
 
 # =========================================================================================================
 
@@ -145,7 +153,7 @@ echo -e "${RED_BG}                     Service Information                  ${NC
 echo -e "OpenSSH             = $status_openssh"
 echo -e "Dropbear            = $status_dropbear"
 echo -e "Stunnel5            = $status_stunnel5"
-echo -e "Squid               = $status_squid"
+#echo -e "Squid               = $status_squid"
 echo -e "NGINX               = $status_nginx"
 echo -e "SSH NonTLS          = $status_ws_epro"
 echo -e "SSH TLS             = $status_ws_epro"
@@ -161,7 +169,7 @@ echo -e "Trojan GRPC         = $status_ss"
 echo -e "Shadowsocks WS      = $status_ss"
 echo -e "Shadowsocks None WS = $status_ss"
 echo -e "Shadowsocks GRPC    = $status_ss"
-echo -e "Trojan GO           = $status_ss"
+echo -e "Trojan GO           = $status_go"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
