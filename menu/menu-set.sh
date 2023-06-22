@@ -65,7 +65,7 @@ echo -e ""
 echo -e " [\e[36m•17\e[0m] ADD NOTIF BOT"
 echo -e " [\e[36m•18\e[0m] ADD BOT PANEL"
 echo -e " [\e[36m•19\e[0m] Inpo Prot Server"
-echo -e " [\e[36m•20\e[0m] UPDATE BBR"
+#echo -e " [\e[36m•20\e[0m] UPDATE BBR"
 echo -e ""
 echo -e " [\e[31m•0\e[0m] \e[31mBACK TO MENU\033[0m"
 echo -e   ""
@@ -95,7 +95,7 @@ case $opt in
 17) clear ; bot ; exit ;;
 18) clear ; wget ${BOT}xolpanel.sh && chmod +x xolpanel.sh && ./xolpanel.sh ; exit ;;
 19) clear ; prot ; exit ;;
-20) clear ; updatebbr ; exit ;;
+#20) clear ; updatebbr ; exit ;;
 0) clear ; menu ; exit ;;
 x) exit ;;
 *) echo -e "" ; echo "Anda salah tekan" ; sleep 1 ; menu-set ;;
