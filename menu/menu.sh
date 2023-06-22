@@ -1,5 +1,4 @@
 #!/bin/bash
-# Getting
 ipsaya=$(wget -qO- ipinfo.io/ip)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
@@ -24,7 +23,7 @@ checking_sc() {
   fi
 }
 checking_sc
-clear  
+clear
 
 # Color Validation
 DF='\e[39m'
@@ -95,20 +94,20 @@ Name=$(curl -sS ${Repo1}ip | grep $MYIP | awk '{print $2}')
 Exp=$(curl -sS ${Repo1}ip | grep $MYIP | awk '{print $3}')
 UDPCORE="https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2"
 clear 
-echo -e "${RED}┌───────────────────────────────────────────────┐${NC}" 
-echo -e " ${YELLOW}     _______  _________ ______  __ ${NC} ${putih}PREMIUM${NC}"
-echo -e " ${YELLOW} __ / / __/ |/ / ___/ //_/ __ \/ / ${NC} ${putih}SCRIPT${NC}"
+echo -e "\033[31m┌───────────────────────────────────────────────┐\e[0m" 
+echo -e " ${YELLOW}     _______  _________ ______  __ ${NC} ${RED}PREMIUM${NC}"
+echo -e " ${YELLOW} __ / / __/ |/ / ___/ //_/ __ \/ / ${NC} ${RED}SCRIPT${NC}"
 echo -e " ${YELLOW}/ // / _//    / (_ / ,< / /_/ / /__${NC} ${BLUE}========${NC}"
 echo -e " ${YELLOW}\___/___/_/|_/\___/_/|_|\____/____/${NC}"
 echo -e " ${putih}───────${NC} ${Green} / __ \/ |/ / /  /  _/ |/ / __//|  ${NC}"  
 echo -e " ${putih}───────${NC} ${Green}/ /_/ /    / /___/ //    / _/> _< ${NC}"  
 echo -e " ${putih}───────${NC} ${Green}\____/_/|_/____/___/_/|_/___/|/   ${NC}"
 echo -e " ${Green}MULTI PROT PROT${FONT} (C)${GRAY} AUTO INSTALASI${NC}" 
-echo -e "${putih]└───────────────────────────────────────────────┘${NC}"
+echo -e "\033[31m└───────────────────────────────────────────────┘\e[0m"
 #echo -e "  ${Blue}XRAY${NC}: [ ${status_xray} ]     ${Blue}NGINX${NC}: [ ${status_nginx} ${NC} ]   ${Blue}HAPROXY${NC}: [ ${status_haproxy} ${NC}]"
-echo -e "${RED}┌───────────────────────────────────────────────┐${NC}" 
-echo -e "\E[0;100;33m        • INFORMASI •         \E[0m"
-echo -e "${putih]└───────────────────────────────────────────────┘${NC}"
+echo -e "\033[32m┌───────────────────────────────────────────────┐${NC}"
+echo -e "\e[1;97m                     INFORMATION                \e[0m"
+echo -e "\033[32m└───────────────────────────────────────────────┘${NC}"
 echo -e "                                                                                         "
 echo -e "\e[33m Operating System     \e[0m:  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`	
 echo -e "\e[33m Total Amount Of RAM  \e[0m:  $tram MB"
@@ -116,34 +115,36 @@ echo -e "\e[33m System Uptime        \e[0m:  $uptime "
 echo -e "\e[33m Isp Name             \e[0m:  $ISP"
 echo -e "\e[33m Domain               \e[0m:  $domain"	
 echo -e "\e[33m Ip Vps               \e[0m:  $IPVPS"	
-echo -e "${RED}┌───────────────────────────────────────────────┐${NC}" 
-echo -e "\E[0;100;33m       • MENU UTAMA •         \E[0m"
-echo -e "${putih]└───────────────────────────────────────────────┘${NC}"
+echo -e "\033[32m┌───────────────────────────────────────────────┐${NC}"
+echo -e "\e[1;97m                        MENU                       \e[0m"
+echo -e "\033[32m└───────────────────────────────────────────────┘${NC}"
 echo -e ""
 echo -e " [\e[36m•1\e[0m] SSH & OpenVPN Menu  [\e[36m•4\e[0m] Trojan Go Menu"
 echo -e " [\e[36m•2\e[0m] Vmess Menu          [\e[36m•5\e[0m] Trojan GFW Menu"
 echo -e " [\e[36m•3\e[0m] Vless Menu          [\e[36m•6\e[0m] Shadowsoks Menu"
 echo -e ""
-echo -e "${RED}┌───────────────────────────────────────────────┐${NC}" 
-echo -e "\E[0;100;33m       • MENU SISTEM •         \E[0m"
-echo -e "${putih]└───────────────────────────────────────────────┘${NC}"
+echo -e "\033[32m┌───────────────────────────────────────────────┐${NC}"
+echo -e "\e[1;97m                        MENU                       \e[0m"
+echo -e "\033[32m└───────────────────────────────────────────────┘${NC}"
 echo -e ""
 echo -e " [\e[36m•7\e[0m] Install UDP         [\e[36m•9\e[0m] Status Running"
 echo -e " [\e[36m•8\e[0m] SYSTEM Menu         [\e[36m•10\e[0m] Clear RAM Cache"
 echo -e ""
-echo -e "${RED}┌───────────────────────────────────────────────┐${NC}" 
-echo -e "\E[0;100;33m       • MASA AKTIF •         \E[0m"
-echo -e "${putih]└───────────────────────────────────────────────┘${NC}"
+echo -e "\033[32m┌───────────────────────────────────────────────┐${NC}"
+echo -e "\e[1;97m                    MASA AKTIF              \e[0m"
+echo -e "\033[32m└───────────────────────────────────────────────┘${NC}"
 echo -e ""
 echo -e "   ${putih}Client Name${NC}   :  ${putih}$Name${NC}"
 echo -e "   ${putih}Exp Script${NC}    :  ${putih}$Exp${NC}"
 echo -e "   ${putih}Version${NC}       :  ${putih}2.1.2${NC}"
 echo -e ""
-echo -e "${putih]└───────────────────────────────────────────────┘${NC}"
+echo -e "\033[32m└───────────────────────────────────────────────┘${NC}"
 echo -e ""
 echo -e   " Press x or [ Ctrl+C ] • To-Exit-Script"
 echo -e   ""
+echo -e   ""
 read -p " Select menu :  "  opt
+echo -e   ""
 case $opt in
 1) clear ; menu-ssh ;;
 2) clear ; menu-vmess ;;
