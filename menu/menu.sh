@@ -59,7 +59,7 @@ fi
 # OS Uptime
 uptime="$(uptime -p | cut -d " " -f 2-10)"
 # Download
-Repo1="https://raw.githubusercontent.com/Jengkolonline/izinn/main/ip"
+Repo1="https://raw.githubusercontent.com/Jengkolonline/izinn/main/"
 #Download/Upload today
 dtoday="$(vnstat -i eth0 | grep "today" | awk '{print $2" "substr ($3, 1, 1)}')"
 utoday="$(vnstat -i eth0 | grep "today" | awk '{print $5" "substr ($6, 1, 1)}')"
