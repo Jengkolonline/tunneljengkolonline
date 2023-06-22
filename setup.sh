@@ -250,6 +250,7 @@ echo "   - Stunnel4		   : 447, 777" | tee -a log-install.txt
 echo "   - Dropbear		   : 109, 143" | tee -a log-install.txt
 echo "   - Badvpn		   : 7100-7900" | tee -a log-install.txt
 echo "   - Nginx		   : 81" | tee -a log-install.txt
+echo "   - Squid Proxy             : 3128, 8000 (limit to IP Server)"  | tee -a log-install.txt
 echo "   - Vmess TLS		   : 443" | tee -a log-install.txt
 echo "   - Vmess None TLS	   : 80" | tee -a log-install.txt
 echo "   - Vmess Grpc		   : 443" | tee -a log-install.txt
