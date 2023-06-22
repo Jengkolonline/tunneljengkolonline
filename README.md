@@ -42,7 +42,7 @@ ____________________________________________
 | Shadowsocks WS TLS      |  443,          |
 | Shadowsocks none TLS    |  80,           |            
 | Shadowsocks Grpc        |  443           |
-| Trojan Go               |  80            |
+| Trojan Go               |  443           |
 | UDP                     |  54-65535      |
 --------------------------------------------
 ## _Server Features :_ 
