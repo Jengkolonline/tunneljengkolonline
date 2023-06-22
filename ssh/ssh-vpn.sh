@@ -304,7 +304,7 @@ wget -O clearcache "https://raw.githubusercontent.com/Jengkolonline/tunneljengko
 wget -O menu-trgo "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/menu/menu-trgo.sh"
 wget -O menu-trojan "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/menu/menu-trojan.sh"
 wget -O m-ssws "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/menu/m-ssws.sh"
-wget -O updatebbr "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/menu/updatebbr.sh"
+#wget -O updatebbr "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/menu/updatebbr.sh"
 wget -O update "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/menu/update.sh"
 wget -O prot "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/menu/prot.sh"
 
@@ -352,7 +352,7 @@ chmod +x clearcache
 chmod +x menu-trgo
 chmod +x menu-trojan
 chmod +x m-ssws
-chmod +x updatebbr
+#chmod +x updatebbr
 chmod +x update
 chmod +x prot
 
