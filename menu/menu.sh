@@ -143,9 +143,7 @@ echo -e "${putih]└────────────────────
 echo -e ""
 echo -e   " Press x or [ Ctrl+C ] • To-Exit-Script"
 echo -e   ""
-echo -e   ""
 read -p " Select menu :  "  opt
-echo -e   ""
 case $opt in
 1) clear ; menu-ssh ;;
 2) clear ; menu-vmess ;;
