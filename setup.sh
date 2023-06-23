@@ -57,7 +57,8 @@ cek_reg_mode() {
             echo -e "             ${RED}TIDAK DI IZINKAN${FONT}"
             echo -e "        VPS SERVER BELUM TERDAPTAR"
             echo "UNTUK MELANJUATKAN SILAHKAN REGISTRASI VPS"
-            echo ""
+            echo "Wa: https://w.me/6282372139631"
+	    echo ""
             echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
             read -n 1 -s -r -p "       Ketik ENTER untuk Keluar "
             exit 0
@@ -66,8 +67,19 @@ cek_reg_mode() {
 }
 clear
 main() {
-    LOGO
-    echo -e "  \033[1;91mJANGAN INSTALL SCRIPT INI MENGGUNAKAN KONEKSI VPN!!!${FONT}"
+    #LOGO
+    echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e " \e[0;100;33m        • AutoScript by JENGKOLONLINE •            \e[0m"
+    echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e " ${YELLOW}     _______  _________ ______  __ ${NC} ${RED}PREMIUM${NC}"
+    echo -e " ${YELLOW} __ / / __/ |/ / ___/ //_/ __ \/ / ${NC} ${RED}SCRIPT${NC}"
+    echo -e " ${YELLOW}/ // / _//    / (_ / ,< / /_/ / /__${NC} ${BLUE}========${NC}"
+    echo -e " ${YELLOW}\___/___/_/|_/\___/_/|_|\____/____/${NC}"
+    echo -e "       ${RED}───────${NC} ${Green} / __ \/ |/ / /  /  _/ |/ / __//|  ${NC}"  
+    echo -e "       ${RED}───────${NC} ${Green}/ /_/ /    / /___/ //    / _/> _< ${NC}"  
+    echo -e "       ${RED}───────${NC} ${Green}\____/_/|_/____/___/_/|_/___/|/   ${NC}"
+    echo -e " ${Green}MULTI PROT PROT 443 & 80${FONT} (C)${GRAY} AUTO INSTALASI${NC}" 
+    echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e ""
     echo -e "${Green}1.${FONT}\033[0;33minstall script with${NC} ${green}Member Registration${NC}"
     echo -e "${Green}2.${FONT}\033[0;33mInstall script with${NC} ${BLUE}Trial Mode 1 Hari${NC}"
