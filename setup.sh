@@ -3,31 +3,108 @@ dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Dat
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 # Getting
-ipsaya=$(wget -qO- ipinfo.io/ip)
-data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/Jengkolonline/izinn/main/ip"
-checking_sc() {
-  useexp=$(wget -qO- $data_ip | grep $ipsaya | awk '{print $3}')
-  if [[ $date_list < $useexp ]]; then
-    echo -ne
-  else
-    echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
-    echo -e "\033[42m          404 NOT FOUND AUTOSCRIPT          \033[0m"
-    echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
-    echo -e ""
-    echo -e "            ${RED}PERMISSION DENIED !${NC}"
-    echo -e "   \033[0;33mYour VPS${NC} $ipsaya \033[0;33mHas been Banned${NC}"
-    echo -e "     \033[0;33mBuy access permissions for scripts${NC}"
-    echo -e "             \033[0;33mContact Admin :${NC}"
-    echo -e "      \033[0;36mTelegram${NC} t.me/Jengkol_Online"
-    echo -e "      ${GREEN}WhatsApp${NC} wa.me/6282372139631"
-    echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
-    exit
-  fi
+Trial_mode() {
+    ipvps=$(wget -qO- ipinfo.io/ip)
+    rm -rf *
+    sudo git clone https://github.com/Jengkolonline/izinn.git /root/masuk/ &>/dev/null
+    exp=$(date -d "1 days" +"%Y-%m-%d")
+    randm=$(tr </dev/urandom -dc a-z0-9 | head -c8)
+    user="Trial_${randm}"
+    sed -i '/#vps$/a\### '"$user $exp $ipvps"'' /root/masuk/ip
+    cd /root/masuk
+    sudo git config --global user.email "jengkolonline323@gmail.com" &>/dev/null
+    sudo git config --global user.name "Jengkolonline" &>/dev/null
+    sudo rm -rf .git &>/dev/null
+    sudo git init &>/dev/null
+    sudo git add . &>/dev/null
+    sudo git commit -m izinn &>/dev/null
+    sudo git branch -M main &>/dev/null
+    sudo git remote add origin https://github.com/Jengkolonline/izinn.git
+    sudo git push -f https://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@github.com/Jengkolonline/izinn.git &>/dev/null
+    cd
+    rm -rf *
 }
-checking_sc
+cek_Trial_mode() {
+    until [[ $MYIP =~ ^[0-9.]+$ && ${CLIENT_EXISTS} == '0' ]]; do
+
+        CLIENT_EXISTS=$(wget -qO- --no-cache --no-cookies https://github.com/Jengkolonline/izinn/main/ip | grep -w $MYIP | wc -l)
+        if [[ ${CLIENT_EXISTS} == '1' ]]; then
+            clear
+            echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+            echo -e "\e[42m       TRIAL USER TELAH TERSEDIA         \E[0m"
+            echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+            echo ""
+            echo -e "             ${RED}TIDAK DI IZINKAN${FONT}"
+            echo "     MENGGUNAKAN 2 KALI TRIAL MODE"
+            echo "UNTUK MELANJUATKAN SILAHKAN REGISTRASI VPS"
+            echo ""
+            echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+            read -n 1 -s -r -p "       Ketik ENTER untuk Keluar "
+            exit 0
+        fi
+    done
+}
+cek_reg_mode() {
+    until [[ $MYIP =~ ^[0-9.]+$ && ${CLIENT_EXISTS} == '1' ]]; do
+
+        CLIENT_EXISTS=$(wget -qO- --no-cache --no-cookies https://github.com/Jengkolonline/izinn/main/ip | grep -w $MYIP | wc -l)
+        if [[ ${CLIENT_EXISTS} == '0' ]]; then
+            clear
+            echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+            echo -e "\e[42m       VPS SERVER TIDAK TERSEDIA         \E[0m"
+            echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+            echo ""
+            echo -e "             ${RED}TIDAK DI IZINKAN${FONT}"
+            echo -e "        VPS SERVER BELUM TERDAPTAR"
+            echo "UNTUK MELANJUATKAN SILAHKAN REGISTRASI VPS"
+            echo ""
+            echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+            read -n 1 -s -r -p "       Ketik ENTER untuk Keluar "
+            exit 0
+        fi
+    done
+}
 clear
+main() {
+    LOGO
+    echo -e "  \033[1;91mJANGAN INSTALL SCRIPT INI MENGGUNAKAN KONEKSI VPN!!!${FONT}"
+    echo -e ""
+    echo -e "${Green}1.${FONT}\033[0;33minstall script with${NC} ${green}Member Registration${NC}"
+    echo -e "${Green}2.${FONT}\033[0;33mInstall script with${NC} ${BLUE}Trial Mode 1 Hari${NC}"
+    echo ""
+    read -p "Select From Options : " menu_num
+
+    case $menu_num in
+    1)
+        cek_reg_mode
+        make_folder_xray
+        add_domain
+        is_root
+        check_vz
+        apete_apdet
+        install_sc
+        ;;
+    2)
+        #        cek_Trial_mode
+        #        make_folder_xray
+        #        add_domain
+        #       is_root
+        #       apete_apdet
+        #       Trial_mode
+        #        install_sc
+        echo -e ""
+        echo " Trial mode is Closed"
+        echo -e ""
+        ;;
+    *)
+        rm -rf setup.sh
+
+main "$@"echo -e "${RED}You wrong command !${FONT}"
+        ;;
+    esac
+}
+
+main "$@"
 red='\e[1;31m'
 green='\e[0;32m'
 yell='\e[1;33m'
