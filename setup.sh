@@ -263,7 +263,14 @@ echo "   - Trojan Grpc  	   : 443" | tee -a log-install.txt
 echo "   - Shadowsocks WS TLS      : 443" | tee -a log-install.txt
 echo "   - Shadowsocks none TLS.   : 80" | tee -a log-install.txt
 echo "   - Shadowsocks Grpc	   : 443" | tee -a log-install.txt
-echo "   - Trojan Go		   : 443" | tee -a log-install.txt
+#echo "   - Trojan Go		   : 443" | tee -a log-install.txt
+echo "   - Wireguard               : 7070" | tee -a log-install.txt
+echo "   - SSTP VPN                : 444" | tee -a log-install.txt
+echo "   - L2TP/IPSEC VPN          : 1701" | tee -a log-install.txt
+echo "   - PPTP VPN                : 1732" | tee -a log-install.txt
+echo "   - SS-OBFS TLS             : 2443-2543" | tee -a log-install.txt
+echo "   - SS-OBFS HTTP            : 3443-3543" | tee -a log-install.txt
+echo "   - Shadowsocks-R           : 1443-1543" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "   >>> Server Information & Other Features"  | tee -a log-install.txt
 echo "   - Timezone		   : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
