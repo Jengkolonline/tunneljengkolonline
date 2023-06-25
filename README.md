@@ -44,7 +44,15 @@ ____________________________________________
 | Shadowsocks Grpc        |  443           |
 | Trojan Go               |  443           |
 | UDP                     |  54-65535      |
+| Wireguard               |  7070          |
+| SSTP VPN                |  444,          |
+| L2TP/IPSEC VPN          |  1701,         |
+| PPTP VPN                |  1732,         |            
+| SS-OBFS TLS             |  2443-2543     |
+| SS-OBFS HTTP            |  3443-3543     |
+| Shadowsocks-R           |  1443-1543     |
 --------------------------------------------
+
 ## _Server Features :_ 
 - Multi Path & Support Seting Path
 - Timezone Asia/Jakarta (GMT +7)
