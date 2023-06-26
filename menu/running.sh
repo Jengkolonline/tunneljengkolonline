@@ -77,13 +77,14 @@ CITY=$( curl -s ipinfo.io/city )
 #clear
 
 # CHEK STATUS 
+l2tp_status=$(systemctl status xl2tpd | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 openvpn_service="$(systemctl show openvpn.service --no-page)"
 oovpn=$(echo "${openvpn_service}" | grep 'ActiveState=' | cut -f2 -d=)
-status_openvp=$(/etc/init.d/openvpn status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+#status_openvp=$(/etc/init.d/openvpn status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #status_ss_tls="$(systemctl show shadowsocks-libev-server@tls.service --no-page)"
 #ss_tls=$(echo "${status_ss_tls}" | grep 'ActiveState=' | cut -f2 -d=)
-#sst_status=$(systemctl status shadowsocks-libev-server@tls | grep Active | awk '{print $0}' | cut -d "(" -f2 | cut -d ")" -f1) 
-#ssh_status=$(systemctl status shadowsocks-libev-server@http | grep Active | awk '{print $0}' | cut -d "(" -f2 | cut -d ")" -f1) 
+sst_status=$(systemctl status shadowsocks-libev-server@tls | grep Active | awk '{print $0}' | cut -d "(" -f2 | cut -d ")" -f1) 
+ssh_status=$(systemctl status shadowsocks-libev-server@http | grep Active | awk '{print $0}' | cut -d "(" -f2 | cut -d ")" -f1) 
 #status_ss_http="$(systemctl show shadowsocks-libev-server@http.service --no-page)"
 #ss_http=$(echo "${status_ss_http}" | grep 'ActiveState=' | cut -f2 -d=)
 #sssohtt=$(systemctl status shadowsocks-libev-server@*-http | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
@@ -93,30 +94,30 @@ tls_v2ray_status=$(systemctl status xray | grep Active | awk '{print $3}' | cut 
 nontls_v2ray_status=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 vless_tls_v2ray_status=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 vless_nontls_v2ray_status=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#ssr_status=$(systemctl status ssrmu | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+ssr_status=$(systemctl status ssrmu | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 trojan_server=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 dropbear_status=$(/etc/init.d/dropbear status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-stunnel_service=$(/etc/init.d/stunnel4 status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#sstp_service=$(systemctl status accel-ppp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+stunnel_service=$(/etc/init.d/stunnel5 status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+sstp_service=$(systemctl status accel-ppp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 squid_service=$(/etc/init.d/squid status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 ssh_service=$(/etc/init.d/ssh status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 vnstat_service=$(/etc/init.d/vnstat status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 cron_service=$(/etc/init.d/cron status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 fail2ban_service=$(/etc/init.d/fail2ban status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#wg="$(systemctl show wg-quick@wg0.service --no-page)"
-#swg=$(echo "${wg}" | grep 'ActiveState=' | cut -f2 -d=)
+wg="$(systemctl show wg-quick@wg0.service --no-page)"
+swg=$(echo "${wg}" | grep 'ActiveState=' | cut -f2 -d=)
 trgo="$(systemctl show trojan-go.service --no-page)"                                      
 strgo=$(echo "${trgo}" | grep 'ActiveState=' | cut -f2 -d=)  
-#sswg=$(systemctl status wg-quick@wg0 | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-wstls=$(systemctl status ws-stunnel.service | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-wsdrop=$(systemctl status ws-dropbear.service | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#wsovpn=$(systemctl status ws-ovpn | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+sswg=$(systemctl status wg-quick@wg0 | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+wstls=$(systemctl status ws-tls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+wsdrop=$(systemctl status ws-nontls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+wsovpn=$(systemctl status ws-ovpn | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #wsopen=$(systemctl status ws-openssh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#osslh=$(systemctl status sslh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#ohp=$(systemctl status dropbear-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#ohq=$(systemctl status openvpn-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#ohr=$(systemctl status ssh-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-ss_status=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+osslh=$(systemctl status sslh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+ohp=$(systemctl status dropbear-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+ohq=$(systemctl status openvpn-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+ohr=$(systemctl status ssh-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+
 
 # COLOR VALIDATION
 RED='\033[0;31m'
@@ -244,6 +245,55 @@ else
   ss_tls="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
+# SHADOWSOCKSR STATUS
+if [[ $ssr_status == "running" ]] ; then
+  status_ssr=" ${GREEN}Running${NC} ( No Error )${NC}"
+else
+  status_ssr="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+
+# SODOSOK
+if [[ $status_text == "active" ]] ; then
+  status_sodosok=" ${GREEN}Running${NC} ( No Error )${NC}"
+else
+  status_sodosok="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+
+# STATUS SERVICE WIREGUARD
+if [[ $swg == "active" ]]; then
+  status_wg=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+  status_wg="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+
+# STATUS SERVICE L2TP
+if [[ $l2tp_status == "running" ]]; then 
+   status_l2tp=" ${GREEN}Running${NC} ( No Error )${NC}"
+else
+   status_l2tp="${RED}  Not Running${NC}  ( Error )${NC}"
+fi
+
+# STATUS SERVICE SSTP
+if [[ $sstp_service == "running" ]]; then 
+   status_sstp=" ${GREEN}Running ${NC}( No Error )"
+else
+   status_sstp="${RED}  Not Running ${NC}  ( Error )"
+fi
+
+# STATUS SERVICE Shadowsocks HTTPS
+if [[ $sst_status == "running" ]]; then
+  status_sst=" ${GREEN}Running ${NC}( No Error )"
+else
+  status_sst="${RED}  Not Running ${NC}  ( Error )"
+fi
+
+# STATUS SERVICE Shadowsocks HTTP
+if [[ $ssh_status == "running" ]]; then 
+   status_ssh=" ${GREEN}Running ${NC}( No Error )"
+else
+   status_ssh="${RED}  Not Running ${NC}  ( Error )"
+fi
+
 # TOTAL RAM
 total_ram=` grep "MemTotal: " /proc/meminfo | awk '{ print $2}'`
 totalram=$(($total_ram/1024))
@@ -318,5 +368,11 @@ echo -e "❇️ XRAYS Shadowshokes Grpc :$ss_tls"
 echo -e "❇️ Trojan GO               :$status_trgo"
 echo -e "❇️ Websocket TLS           :$swstls"
 echo -e "❇️ Websocket None TLS      :$swsdrop"
+echo -e "❇️ L2TP                    :$status_l2tp"
+echo -e "❇️ SSTP                    :$status_sstp"
+echo -e "❇️ Shadowsocks-R           :$status_ssr"
+echo -e "❇️ Shadowsocks-OBFS HTTPS  :$status_sst"
+echo -e "❇️ Shadowsocks-OBFS HTTP   :$status_ssh"
+echo -e "❇️ Wireguard               :$status_wg"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo ""
