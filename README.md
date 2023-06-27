@@ -51,6 +51,9 @@ ____________________________________________
 | SS-OBFS TLS             |  2443-2543     |
 | SS-OBFS HTTP            |  3443-3543     |
 | Shadowsocks-R           |  1443-1543     |
+| OpenVPN TCP             |  1194          |
+| OpenVPN UDP             |  2200          |
+| OpenVPN SSL             |  110           |
 --------------------------------------------
 
 ## _Server Features :_ 
