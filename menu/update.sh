@@ -194,27 +194,6 @@ wget -O trialssws "https://raw.githubusercontent.com/Jengkolonline/tunneljengkol
 wget -O del-ssws "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/xray/del-ssws.sh" && chmod +x del-ssws
 wget -O renew-ssws "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/xray/renew-ssws.sh" && chmod +x renew-ssws
 
-# trojan go
-wget -O addtrgo "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/xray/addtrgo.sh" && chmod +x addtrgo
-wget -O trialtrojango "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/xray/trialtrojango.sh" && chmod +x trialtrojango
-wget -O deltrgo "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/xray/deltrgo.sh" && chmod +x deltrgo
-wget -O renewtrgo "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/xray/renewtrgo.sh" && chmod +x renewtrgo
-wget -O cektrgo "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/xray/cektrgo.sh" && chmod +x cektrgo
-
-cd
-apt install jq curl -y
-# install webserver
-apt -y install nginx
-cd
-rm /etc/nginx/sites-enabled/default
-rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/ssh/nginx.conf"
-mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Jengkolonline/vpn/main/vps.conf"
-/etc/init.d/nginx restart
-cd
-wget https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
-
 echo -e "${green}------------------------------------------${NC}"
 echo -e "${RED} UPDATE SELESAI ${NC}"
 echo -e "${RED} TERIMAKASIH TELAH MENUNGGU ${NC}"
