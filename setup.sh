@@ -201,6 +201,12 @@ clear
 wget https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 wget https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green          Install OpenVPN              $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sleep 2
+clear
+wget https://raw.githubusercontent.com/Jengkolonline/vpn/main/vpn.sh && chmod +x vpn.sh && ./vpn.sh
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green          Install Backup              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
@@ -307,6 +313,7 @@ echo "" | tee -a log-install.txt
 rm /root/setup.sh >/dev/null 2>&1
 rm /root/ins-xray.sh >/dev/null 2>&1
 rm /root/insshws.sh >/dev/null 2>&1
+rm /root/vpn.sh >/dev/null 2>&1
 rm /root/set-br.sh >/dev/null 2>&1
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 echo -e "
