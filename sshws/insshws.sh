@@ -32,13 +32,13 @@ cd
 #wget -O /usr/local/bin/ws-openssh https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/sshws/openssh-socket.py
 wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/sshws/dropbear-ws.py
 wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/sshws/ws-stunnel
-#wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/${GitUser}/test1/${namafolder}/main/ws-ovpn && chmod +x /usr/local/bin/ws-ovpn
+wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/sshws/ws-ovpn && chmod +x /usr/local/bin/ws-ovpn
 
 #izin permision
 #chmod +x /usr/local/bin/ws-openssh
 chmod +x /usr/local/bin/ws-dropbear
 chmod +x /usr/local/bin/ws-stunnel
-#chmod +x /usr/local/bin/ws-ovpn
+chmod +x /usr/local/bin/ws-ovpn
 
 
 #System OpenSSH Websocket-SSH Python
