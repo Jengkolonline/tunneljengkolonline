@@ -202,8 +202,18 @@ wget -O renewtrgo "https://raw.githubusercontent.com/Jengkolonline/tunneljengkol
 wget -O cektrgo "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/xray/cektrgo.sh" && chmod +x cektrgo
 
 cd
+apt install jq curl -y
+# install webserver
+apt -y install nginx
+cd
+rm /etc/nginx/sites-enabled/default
+rm /etc/nginx/sites-available/default
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/ssh/nginx.conf"
+mkdir -p /home/vps/public_html
 wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Jengkolonline/vpn/main/vps.conf"
 /etc/init.d/nginx restart
+cd
+
 
 echo -e "${green}------------------------------------------${NC}"
 echo -e "${RED} UPDATE SELESAI ${NC}"
