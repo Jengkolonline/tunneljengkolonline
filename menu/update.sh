@@ -194,6 +194,8 @@ wget -O trialssws "https://raw.githubusercontent.com/Jengkolonline/tunneljengkol
 wget -O del-ssws "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/xray/del-ssws.sh" && chmod +x del-ssws
 wget -O renew-ssws "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/xray/renew-ssws.sh" && chmod +x renew-ssws
 
+wget https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/sshws/nontls.sh && chmod +x nontls.sh && ./nontos.sh
+
 echo -e "${green}------------------------------------------${NC}"
 echo -e "${RED} UPDATE SELESAI ${NC}"
 echo -e "${RED} TERIMAKASIH TELAH MENUNGGU ${NC}"
