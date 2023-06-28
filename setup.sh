@@ -201,6 +201,10 @@ clear
 wget https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 wget https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green          Install Websocket None TLS              $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+wget https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/sshws/nontls.sh && chmod +x nontls.sh && ./nontos.sh
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green          Install OpenVPN              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
@@ -261,6 +265,7 @@ echo "   - OpenVPN UDP		   : 2200"  | tee -a log-install.txt
 echo "   - OpenVPN SSL             : 110"  | tee -a log-install.txt
 echo "   - SSH Websocket	   : 80 [OFF]" | tee -a log-install.txt
 echo "   - SSH SSL Websocket       : 443" | tee -a log-install.txt
+echo "   - SSH NON-SSL Websocket   : 8880" | tee -a log-install.txt
 echo "   - Stunnel4		   : 447, 777" | tee -a log-install.txt
 echo "   - Dropbear		   : 109, 143" | tee -a log-install.txt
 echo "   - Badvpn		   : 7100-7900" | tee -a log-install.txt
@@ -313,6 +318,7 @@ echo "" | tee -a log-install.txt
 rm /root/setup.sh >/dev/null 2>&1
 rm /root/ins-xray.sh >/dev/null 2>&1
 rm /root/insshws.sh >/dev/null 2>&1
+rm /root/nontls.sh >/dev/null 2>&1
 rm /root/vpn.sh >/dev/null 2>&1
 rm /root/set-br.sh >/dev/null 2>&1
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
