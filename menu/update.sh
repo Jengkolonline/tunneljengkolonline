@@ -204,6 +204,9 @@ function install_slowdns(){
     print_success "SlowDNS"
 }
 
+rm /root/set-br.sh >/dev/null 2>&1
+rm /root//tmp/nameserver >/dev/null 2>&1
+
 echo -e "${green}------------------------------------------${NC}"
 echo -e "${RED} UPDATE SELESAI ${NC}"
 echo -e "${RED} TERIMAKASIH TELAH MENUNGGU ${NC}"
