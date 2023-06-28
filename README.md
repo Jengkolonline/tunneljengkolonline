@@ -25,8 +25,9 @@ ____________________________________________
 |-------------------------|----------------|
 | Open SSH                |  22            |
 | Dropbear                |  143, 109      |
-| SSH Websocket           |  80,           |
+| SSH Websocket           |  80            |
 | SSH SSL Websocket       |  443,          |
+| SSH None SSL Websocket  |  8880,         |
 | Stunnel4                |  447, 777      |
 | Badvpn                  |  7100-7900     |
 | Nginx                   |  81            |
