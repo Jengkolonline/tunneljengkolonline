@@ -45,6 +45,8 @@ ____________________________________________
 | Shadowsocks Grpc        |  443           |
 | Trojan Go               |  443           |
 | UDP                     |  54-65535      |
+| UDP                     |  10000-10150   |
+| UDP                     |  1-65535       |
 | Wireguard               |  7070          |
 | SSTP VPN                |  444,          |
 | L2TP/IPSEC VPN          |  1701,         |
