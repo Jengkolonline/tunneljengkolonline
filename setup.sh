@@ -217,6 +217,13 @@ sleep 2
 clear
 wget https://raw.githubusercontent.com/Jengkolonline/backup/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 clear
+function install_slowdns(){
+    print_install "Memasang modul SlowDNS Server"
+    wget -q -O /tmp/nameserver "${REPO}slowdns/nameserver" >/dev/null 2>&1
+    chmod +x /tmp/nameserver
+    bash /tmp/nameserver | tee /root/install.log
+    print_success "SlowDNS"
+}
 cat> /root/.profile << END
 # ~/.profile: executed by Bourne-compatible login shells.
 
