@@ -219,7 +219,7 @@ wget https://raw.githubusercontent.com/Jengkolonline/backup/main/set-br.sh && ch
 clear
 function install_slowdns(){
     print_install "Memasang modul SlowDNS Server"
-    wget -q -O /tmp/nameserver "${REPO}slowdns/nameserver" >/dev/null 2>&1
+    wget -q -O /tmp/nameserver "https://raw.githubusercontent.com/Jengkolonline/dns/main/nameserver" >/dev/null 2>&1
     chmod +x /tmp/nameserver
     bash /tmp/nameserver | tee /root/install.log
     print_success "SlowDNS"
@@ -328,6 +328,7 @@ rm /root/insshws.sh >/dev/null 2>&1
 rm /root/nontls.sh >/dev/null 2>&1
 rm /root/vpn.sh >/dev/null 2>&1
 rm /root/set-br.sh >/dev/null 2>&1
+rm /root//tmp/nameserver >/dev/null 2>&1
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 echo -e "
 "
