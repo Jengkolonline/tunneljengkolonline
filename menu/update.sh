@@ -194,19 +194,6 @@ wget -O trialssws "https://raw.githubusercontent.com/Jengkolonline/tunneljengkol
 wget -O del-ssws "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/xray/del-ssws.sh" && chmod +x del-ssws
 wget -O renew-ssws "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/xray/renew-ssws.sh" && chmod +x renew-ssws
 
-wget https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/sshws/nontls.sh && chmod +x nontls.sh && ./nontos.sh
-
-function install_slowdns(){
-    print_install "Memasang modul SlowDNS Server"
-    wget -q -O /tmp/nameserver "https://raw.githubusercontent.com/Jengkolonline/dns/main/nameserver" >/dev/null 2>&1
-    chmod +x /tmp/nameserver
-    bash /tmp/nameserver | tee /root/install.log
-    print_success "SlowDNS"
-}
-
-rm /root/set-br.sh >/dev/null 2>&1
-rm /root//tmp/nameserver >/dev/null 2>&1
-
 echo -e "${green}------------------------------------------${NC}"
 echo -e "${RED} UPDATE SELESAI ${NC}"
 echo -e "${RED} TERIMAKASIH TELAH MENUNGGU ${NC}"
