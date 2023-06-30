@@ -41,9 +41,6 @@ wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | a
 
 clear
 IP=$(curl -sS ifconfig.me);
-tcp=`cat /root/log-install.txt | grep -w "OpenVPN TCP" | cut -f2 -d: | awk '{print $6}'`
-udp=`cat /root/log-install.txt | grep -w "OpenVPN UDP" | cut -f2 -d: | awk '{print $6}'`
-ossl=`cat /root/log-install.txt | grep -w "OpenVPN SSL" | cut -f2 -d: | awk '{print $6}'`
 opensh=`cat /root/log-install.txt | grep -w "OpenSSH" | cut -f2 -d: | awk '{print $1}'`
 db=`cat /root/log-install.txt | grep -w "Dropbear" | cut -f2 -d: | awk '{print $1,$2}'`
 ssl="$(cat ~/log-install.txt | grep -w "Stunnel4" | cut -d: -f2)"
@@ -91,12 +88,17 @@ echo -e "Port Squid  : $sqd"
 echo -e "OpenVPN TCP : 1194"
 echo -e "OpenVPN UDP : 2200"
 echo -e "OpenVPN SSL : 110"
+echo -e "OHP Dropbear: 8585"
+echo -e "OHP OpenSSH : 8686"
+echo -e "OHP OpenVPN : 8787"
 echo -e "UDPGW       : 7100-7300"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e " 🔰Account OpenVPN🔰 "
 echo -e "OpenVPN TCP : 1194 http://$IP:81/client-tcp-1194.ovpn"
 echo -e "OpenVPN UDP : 2200 http://$IP:81/client-udp-2200.ovpn"
 echo -e "OpenVPN SSL : 110 http://$IP:81/client-tcp-ssl.ovpn"
+echo -e " 🔰Account OpenVPN OHP🔰 "
+echo -e "OpenVPN OHP : 8787 http://$MYIP:81/client-tcp-ohp1194.ovpn"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e " 🔰Account UDP 1🔰 "
 echo -e "$domen:54-65535@$Login:$Pass"
@@ -107,11 +109,15 @@ echo -e "$domen:1-65535@$Login:$Pass"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "Payload WSS"
 echo -e "
-GET wss://isi_bug_disini [protocol][crlf]Host: ${domen}[crlf]Upgrade: websocket[crlf][crlf]
+GET wss://isi_bug_disini/ HTTP/1.1[crlf]Host: sshws.$domain[crlf]Upgrade: websocket[crlf]Connection: Keep-Alive[crlf][crlf]
 "
 echo -e "Payload WS"
 echo -e "
-GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
+GET / HTTP/1.1[crlf]Host: sshws.$domain[crlf]Upgrade: websocket[crlf][crlf]
+"
+echo -e "PAYLOAD WS OVPN HTTP"
+echo -e "
+GET wss://isi_bug_disini/ HTTP/1.1[crlf]Host: sshws.$domain[crlf]Upgrade: websocket[crlf]Connection: Keep-Alive[crlf][crlf]
 "
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "URL TEX  :https://$IP:81/ssh-$Login.txt"
@@ -140,12 +146,17 @@ echo -e "Port Squid  : $sqd"
 echo -e "OpenVPN TCP : 1194"
 echo -e "OpenVPN UDP : 2200"
 echo -e "OpenVPN SSL : 110"
+echo -e "OHP Dropbear: 8585"
+echo -e "OHP OpenSSH : 8686"
+echo -e "OHP OpenVPN : 8787"
 echo -e "UDPGW       : 7100-7300"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e " 🔰Account OpenVPN🔰 "
 echo -e "OpenVPN TCP : 1194 http://$IP:81/client-tcp-1194.ovpn"
 echo -e "OpenVPN UDP : 2200 http://$IP:81/client-udp-2200.ovpn"
 echo -e "OpenVPN SSL : 110 http://$IP:81/client-tcp-ssl.ovpn"
+echo -e " 🔰Account OpenVPN OHP🔰 "
+echo -e "OpenVPN OHP : 8787 http://$MYIP:81/client-tcp-ohp1194.ovpn"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e " 🔰Account UDP 1🔰 "
 echo -e "$domen:54-65535@$Login:$Pass"
@@ -156,11 +167,15 @@ echo -e "$domen:1-65535@$Login:$Pass"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "Payload WSS"
 echo -e "
-GET wss://isi_bug_disini [protocol][crlf]Host: ${domen}[crlf]Upgrade: websocket[crlf][crlf]
+GET wss://isi_bug_disini/ HTTP/1.1[crlf]Host: sshws.$domain[crlf]Upgrade: websocket[crlf]Connection: Keep-Alive[crlf][crlf]
 "
 echo -e "Payload WS"
 echo -e "
-GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
+GET / HTTP/1.1[crlf]Host: sshws.$domain[crlf]Upgrade: websocket[crlf][crlf]
+"
+echo -e "PAYLOAD WS OVPN HTTP"
+echo -e "
+GET wss://isi_bug_disini/ HTTP/1.1[crlf]Host: sshws.$domain[crlf]Upgrade: websocket[crlf]Connection: Keep-Alive[crlf][crlf]
 "
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "URL TEX  :https://$IP:81/ssh-$Login.txt"
