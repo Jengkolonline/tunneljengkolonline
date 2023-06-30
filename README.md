@@ -57,6 +57,9 @@ ____________________________________________
 | OpenVPN TCP             |  1194          |
 | OpenVPN UDP             |  2200          |
 | OpenVPN SSL             |  110           |
+| OHP Dropbear            |  8585          |
+| OHP SSH                 |  8686          |
+| OHP OpenVPN             |  8787          |
 --------------------------------------------
 
 ## _Server Features :_ 
