@@ -88,6 +88,9 @@ echo -e "SSL/TLS     : $ssl" | tee -a /etc/log-create-user.log
 echo -e "OpenVPN TCP : 1194" | tee -a /etc/log-create-user.log
 echo -e "OpenVPN UDP : 2200" | tee -a /etc/log-create-user.log
 echo -e "OpenVPN SSL : 110" | tee -a /etc/log-create-user.log
+echo -e "OHP Dropbear: 8585" | tee -a /etc/log-create-user.log
+echo -e "OHP OpenSSH : 8686" | tee -a /etc/log-create-user.log
+echo -e "OHP OpenVPN : 8787" | tee -a /etc/log-create-user.log
 echo -e "Prot Squid  : $sqd" | tee -a /etc/log-create-user.log
 echo -e "UDPGW       : 7100-7300" | tee -a /etc/log-create-user.log
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
@@ -95,6 +98,8 @@ echo -e " 🔰Account OpenVPN🔰 "
 echo -e "OpenVPN TCP : 1194 http://$IP:81/client-tcp-1194.ovpn"
 echo -e "OpenVPN UDP : 2200 http://$IP:81/client-udp-2200.ovpn"
 echo -e "OpenVPN SSL : 110 http://$IP:81/client-tcp-ssl.ovpn"
+echo -e " 🔰Account OpenVPN OHP🔰 "
+echo -e "OpenVPN OHP : 8787 http://$MYIP:81/client-tcp-ohp1194.ovpn"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
 echo -e " 🔰Account UDP 1🔰 "
 echo -e "$domen:54-65535@$Login:$Pass"
@@ -105,11 +110,15 @@ echo -e "$domen:1-65535@$Login:$Pass"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
 echo -e "Payload WSS" | tee -a /etc/log-create-user.log
 echo -e "
-GET wss://isi_bug_disini [protocol][crlf]Host: ${domen}[crlf]Upgrade: websocket[crlf][crlf]
+GET wss://$sni/ HTTP/1.1[crlf]Host: sshws.$domain[crlf]Upgrade: websocket[crlf]Connection: Keep-Alive[crlf][crlf]
 " | tee -a /etc/log-create-user.log
 echo -e "Payload WS" | tee -a /etc/log-create-user.log
 echo -e "
-GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
+GET / HTTP/1.1[crlf]Host: sshws.$domain[crlf]Upgrade: websocket[crlf][crlf]
+" | tee -a /etc/log-create-user.log
+echo -e "PAYLOAD WS OVPN HTTP" | tee -a /etc/log-create-user.log
+echo -e "
+GET wss://isi_bug_disini/ HTTP/1.1[crlf]Host: sshws.$domain[crlf]Upgrade: websocket[crlf]Connection: Keep-Alive[crlf][crlf]
 " | tee -a /etc/log-create-user.log
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
 echo -e "URL TEX  :https://$domen:81/ssh-$Login.txt"
@@ -136,6 +145,9 @@ echo -e "SSL/TLS     : $ssl" | tee -a /etc/log-create-user.log
 echo -e "OpenVPN TCP : 1194" | tee -a /etc/log-create-user.log
 echo -e "OpenVPN UDP : 2200" | tee -a /etc/log-create-user.log
 echo -e "OpenVPN SSL : 110" | tee -a /etc/log-create-user.log
+echo -e "OHP Dropbear: 8585" | tee -a /etc/log-create-user.log
+echo -e "OHP OpenSSH : 8686" | tee -a /etc/log-create-user.log
+echo -e "OHP OpenVPN : 8787" | tee -a /etc/log-create-user.log
 echo -e "Prot Squid  : $sqd" | tee -a /etc/log-create-user.log
 echo -e "UDPGW       : 7100-7300" | tee -a /etc/log-create-user.log
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
@@ -143,6 +155,8 @@ echo -e " 🔰Account OpenVPN🔰 "
 echo -e "OpenVPN TCP : 1194 http://$IP:81/client-tcp-1194.ovpn"
 echo -e "OpenVPN UDP : 2200 http://$IP:81/client-udp-2200.ovpn"
 echo -e "OpenVPN SSL : 110 http://$IP:81/client-tcp-ssl.ovpn"
+echo -e " 🔰Account OpenVPN OHP🔰 "
+echo -e "OpenVPN OHP : 8787 http://$MYIP:81/client-tcp-ohp1194.ovpn"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
 echo -e " 🔰Account UDP 1🔰 "
 echo -e "$domen:54-65535@$Login:$Pass"
@@ -151,15 +165,17 @@ echo -e "$IP:10000-10150@$Login:$Pass"
 echo -e " 🔰Account UDP 3🔰 "
 echo -e "$domen:1-65535@$Login:$Pass"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
-echo -e "Expired On     : $exp" | tee -a /etc/log-create-user.log
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
 echo -e "Payload WSS" | tee -a /etc/log-create-user.log
 echo -e "
-GET wss://isi_bug_disini [protocol][crlf]Host: ${domen}[crlf]Upgrade: websocket[crlf][crlf]
+GET wss://isi_bug_disini/ HTTP/1.1[crlf]Host: sshws.$domain[crlf]Upgrade: websocket[crlf]Connection: Keep-Alive[crlf][crlf]
 " | tee -a /etc/log-create-user.log
 echo -e "Payload WS" | tee -a /etc/log-create-user.log
 echo -e "
-GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
+GET / HTTP/1.1[crlf]Host: sshws.$domain[crlf]Upgrade: websocket[crlf][crlf]
+" | tee -a /etc/log-create-user.log
+echo -e "PAYLOAD WS OVPN HTTP" | tee -a /etc/log-create-user.log
+echo -e "
+GET wss://isi_bug_disini/ HTTP/1.1[crlf]Host: sshws.$domain[crlf]Upgrade: websocket[crlf]Connection: Keep-Alive[crlf][crlf]
 " | tee -a /etc/log-create-user.log
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
 echo -e "URL TEX  :https://$domen:81/ssh-$Login.txt"
