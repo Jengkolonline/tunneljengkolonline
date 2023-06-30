@@ -31,6 +31,7 @@ ____________________________________________
 | Stunnel4                |  447, 777      |
 | Badvpn                  |  7100-7900     |
 | Nginx                   |  81            |
+| Squad Proxy             |  3128, 8000    |
 | Vmess TLS               |  443           |
 | Vmess None TLS          |  80            |
 | Vmess Grpc              |  443           |
