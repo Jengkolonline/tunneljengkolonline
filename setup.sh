@@ -189,31 +189,41 @@ read -rp "Input ur domain : " -e pp
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green      Install SSH / WS               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-sleep 2
+sleep 0.5
 clear
 wget https://raw.githubusercontent.com/Jengkolonline/vpn/main/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 #Instal Xray
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green          Install XRAY              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-sleep 2
+sleep 0.5
 clear
 wget https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 wget https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green          Install Websocket None TLS              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sleep 0.5
+clear
 wget https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/sshws/nontls.sh && chmod +x nontls.sh && ./nontos.sh
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green          Install OpenVPN              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-sleep 2
+sleep 0.5
 clear
 wget https://raw.githubusercontent.com/Jengkolonline/vpn/main/vpn.sh && chmod +x vpn.sh && ./vpn.sh
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green          Install OHP              $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sleep 0.5
+clear
+wget https://raw.githubusercontent.com/Jengkolonline/ohp/main/ohp-dropbear.sh && chmod +x ohp-dropbear.sh && ./ohp-dropbear.sh
+wget https://raw.githubusercontent.com/Jengkolonline/ohp/main/ohp-ssh.sh && chmod +x ohp-ssh.sh && ./ohp-ssh.sh
+wget https://raw.githubusercontent.com/Jengkolonline/ohp/main/ohp.sh && chmod +x ohp.sh && ./ohp.sh
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green          Install Backup              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-sleep 2
+sleep 0.5
 clear
 wget https://raw.githubusercontent.com/Jengkolonline/backup/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 clear
