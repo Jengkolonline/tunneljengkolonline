@@ -24,7 +24,7 @@ ____________________________________________
 |        SERVICE          |      PORT      |
 |-------------------------|----------------|
 | Open SSH                |  22            |
-| Dropbear                |  143, 109      |
+| Dropbear                |  8585, 143, 109|
 | SSH Websocket           |  80            |
 | SSH SSL Websocket       |  443,          |
 | SSH None SSL Websocket  |  8880,         |
@@ -32,6 +32,7 @@ ____________________________________________
 | Badvpn                  |  7100-7900     |
 | Nginx                   |  81            |
 | Squad Proxy             |  3128, 8000    |
+| slowdns                 |  5300          |
 | Vmess TLS               |  443           |
 | Vmess None TLS          |  80            |
 | Vmess Grpc              |  443           |
