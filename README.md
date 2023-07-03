@@ -36,12 +36,26 @@ ____________________________________________
 | Vmess TLS               |  443           |
 | Vmess None TLS          |  80            |
 | Vmess Grpc              |  443           |
+| CDN TLS ymil            |  443           |
+| CDN None TLS ymil       |  80            |
+| CDN Grpc ymil           |  443           |
+| OpenClash TLS ymil      |  443           |
+| OpenClash None TLS ymil |  80            |
 | Vless TLS               |  443           |
 | Vless None TLS          |  80            |
 | Vless Grpc              |  443           |
+| CDN TLS ymil            |  443           |
+| CDN None TLS ymil       |  80            |
+| CDN Grpc ymil           |  443           |
+| OpenClash TLS ymil      |  443           |
+| OpenClash None TLS ymil |  80            |
 | Trojan WS TLS           |  443           |
 | Trojan WS none TLS      |  80            |
-| Trojan Grpc             |  443,          |
+| Trojan Grpc             |  443           |
+| CDN TLS ymil            |  443           |
+| CDN None TLS ymil       |  80            |
+| CDN Grpc ymil           |  443           |
+| OpenClash TLS ymil      |  443           |
 | Shadowsocks WS TLS      |  443,          |
 | Shadowsocks none TLS    |  80,           |            
 | Shadowsocks Grpc        |  443           |
