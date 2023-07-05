@@ -198,7 +198,12 @@ wget -O trialssws "https://raw.githubusercontent.com/Jengkolonline/supreme/main/
 wget -O del-ssws "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/del-ssws.sh" && chmod +x del-ssws
 wget -O renew-ssws "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/renew-ssws.sh" && chmod +x renew-ssws
 wget -O tcp "https://raw.githubusercontent.com/Jengkolonline/supreme/main/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
-
+#all
+wget -O add-all "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/add-all.sh" && chmod +x add-all
+wget -O menu-all "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/menu-all.sh" && chmod +x menu-all
+wget -O del-all "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/del-all.sh" && chmod +x del-all
+wget -O renew-all "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/renew-all.sh" && chmod +x renew-all
+wget -O cek-all "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/cek-all.sh" && chmod +x cek-all
 
 echo -e "${green}------------------------------------------${NC}"
 echo -e "${RED} UPDATE SELESAI ${NC}"
