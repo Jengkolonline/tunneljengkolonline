@@ -59,6 +59,10 @@ ____________________________________________
 | Shadowsocks WS TLS      |  443,          |
 | Shadowsocks none TLS    |  80,           |            
 | Shadowsocks Grpc        |  443           |
+| CDN TLS ymil            |  443           |
+| CDN None TLS ymil       |  80            |
+| CDN Grpc ymil           |  443           |
+| OpenClash TLS ymil      |  443           |
 | Trojan Go               |  443           |
 | UDP                     |  54-65535      |
 | UDP                     |  10000-10150   |
