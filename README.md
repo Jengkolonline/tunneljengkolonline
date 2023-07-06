@@ -81,6 +81,14 @@ ____________________________________________
 | OHP Dropbear            |  8585          |
 | OHP SSH                 |  8686          |
 | OHP OpenVPN             |  8787          |
+| Dns Global              |  👩‍💻            |
+| Netflix                 |  💯            |
+| YouTube                 |  💯            |
+| Tik Tok                 |  💯            |
+| iQiyi                   |  💯            |
+| Viu.com                 |  💯            |
+| Hostar                  |  💯            |
+| Steam                   |  💯            |
 --------------------------------------------
 
 ## _Server Features :_ 
