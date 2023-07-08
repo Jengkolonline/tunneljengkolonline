@@ -55,6 +55,7 @@ OhpOVPN=`cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '
 Login=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
 hari="1"
 Pass=1
+Quota=1
 echo Ping Host
 echo Create Akun: $Login
 sleep 0.5
@@ -77,6 +78,7 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 echo -e "IP          : $IP"
 echo -e "Host        : $domen"
 echo -e "Host DNS    : $NS"
+echo -e "User Quota  : ${Quota} GB" 
 echo -e "Pub Key     : ${PUB}"
 echo -e "OpenSSH     : $opensh"
 echo -e "Dropbear    : $db"
@@ -135,6 +137,7 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 echo -e "IP          : $IP"
 echo -e "Host        : $domen"
 echo -e "Host DNS    : $NS"
+echo -e "User Quota  : ${Quota} GB" 
 echo -e "Pub Key     : ${PUB}"
 echo -e "OpenSSH     : $opensh"
 echo -e "Dropbear    : $db"
