@@ -201,10 +201,10 @@ wget -O tcp "https://raw.githubusercontent.com/Jengkolonline/supreme/main/tcp.sh
 #all
 wget -O nf "https://raw.githubusercontent.com/Jengkolonline/nonton/main/nf.sh" && chmod +x nf
 wget -O menu-tambah "https://raw.githubusercontent.com/Jengkolonline/begeg/main/menu-tambah.sh" && chmod +x menu-tambah
-wget -q https://raw.githubusercontent.com/Jengkolonline/begeg/main/wordlist.txt
-wget -q -O begeg "https://raw.githubusercontent.com/Jengkolonline/begeg/main/scan_bug.sh" && chmod +x begeg
-wget -q https://raw.githubusercontent.com/Jengkolonline/begeg/main/subdomains.txt
-wget -q -O cari-bug "https://raw.githubusercontent.com/Jengkolonline/begeg/main/menu-tambah.sh" && chmod +x cari-bug
+wget https://raw.githubusercontent.com/Jengkolonline/begeg/main/wordlist.txt
+wget -O begeg "https://raw.githubusercontent.com/Jengkolonline/begeg/main/scan_bug.sh" && chmod +x begeg
+wget https://raw.githubusercontent.com/Jengkolonline/begeg/main/subdomains.txt
+#wget -O cari-bug "https://raw.githubusercontent.com/Jengkolonline/begeg/main/menu-tambah.sh" && chmod +x cari-bug
 wget -O global "https://raw.githubusercontent.com/Jengkolonline/gelo/main/gelo.sh" && chmod +x global
 wget -O sc "https://raw.githubusercontent.com/Jengkolonline/begeg/main/sc.sh" && chmod +x sc
 
