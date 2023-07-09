@@ -206,6 +206,7 @@ wget -q -O begeg "https://raw.githubusercontent.com/Jengkolonline/begeg/main/sca
 wget -q https://raw.githubusercontent.com/Jengkolonline/begeg/main/subdomains.txt
 wget -q -O cari-bug "https://raw.githubusercontent.com/Jengkolonline/begeg/main/menu-tambah.sh" && chmod +x cari-bug
 wget -O global "https://raw.githubusercontent.com/Jengkolonline/gelo/main/gelo.sh" && chmod +x global
+wget -O sc "https://raw.githubusercontent.com/Jengkolonline/begeg/main/sc.sh" && chmod +x sc
 
 echo -e "${green}------------------------------------------${NC}"
 echo -e "${RED} UPDATE SELESAI ${NC}"
