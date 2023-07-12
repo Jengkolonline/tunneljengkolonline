@@ -203,7 +203,23 @@ wget -O nf "https://raw.githubusercontent.com/Jengkolonline/nonton/main/nf.sh" &
 wget -O menu-tambah "https://raw.githubusercontent.com/Jengkolonline/begeg/main/menu-tambah.sh" && chmod +x menu-tambah
 wget -O global "https://raw.githubusercontent.com/Jengkolonline/gelo/main/gelo.sh" && chmod +x global
 wget -O sc "https://raw.githubusercontent.com/Jengkolonline/begeg/main/sc.sh" && chmod +x sc
-
+wget -O killtrial "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/killtrial.sh" && chmod +x killtrial
+#Edit Quota
+wget -O jilmek "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/jilmek.sh" && chmod +x jilmek
+#Limit IP
+wget -x bdsm "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/bdsm.sh" && chmod +x bdsm
+wget -x limiter "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/limiter.sh" && chmod +x limiter
+cd
+mkdir -p /etc/vmess
+mkdir -p /etc/vless
+mkdir -p /etc/trojan
+mkdir -p /etc/shadowsocks
+mkdir -p /etc/ssh
+touch /etc/vmess/.vmess.db
+touch /etc/vless/.vless.db
+touch /etc/trojan/.trojan.db
+touch /etc/shadowsocks/.shadowsocks.db
+touch /etc/ssh/.ssh.db
 echo -e "${green}------------------------------------------${NC}"
 echo -e "${RED} UPDATE SELESAI ${NC}"
 echo -e "${RED} TERIMAKASIH TELAH MENUNGGU ${NC}"
