@@ -209,18 +209,14 @@ echo -e "\033[1;35m└───────────────────�
 echo -e ""
 read -p "Select From Options [ 1 - 4 ] : " menu
 case $menu in
-1)
-    addws
-    ;;
-2)
-    delws
-    ;;
-3)
-    renewws
-    ;;
-4)
-    cekws
-    ;;
+1) clear ; add-ws ; exit ;;
+2) clear ; trialvmess ; exit ;;
+3) clear ; del-ws ; exit ;;
+4) clear ; renew-ws ; exit ;;
+5) clear ; cek-ws ; exit ;;
+6) clear ; editquota ; exit ;;
+7) clear ; editlimit ; exit ;;
+8) clear ; resquota ; exit ;;
 5)
     editquota
     ;;
