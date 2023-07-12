@@ -3,6 +3,11 @@ dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Dat
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 # Getting
+export CHATID="1830342336"
+export KEY="6320035110:AAE6otySdlNHPhKom2PNtp8yZn8X8rZS7LE"
+export TIME="10"
+export URL="https://api.telegram.org/bot$KEY/sendMessage"
+clear
 ipsaya=$(wget -qO- ipinfo.io/ip)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
