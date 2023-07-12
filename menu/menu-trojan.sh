@@ -191,7 +191,7 @@ echo -e "\033[0;35m┌───────────────────�
 echo -e "\033[0;35m└──────────────────────────────────────────┘\033[0m"
 echo -e "  ${ORANGE}1.${NC} \033[0;36m Creating trojan Account WS/GRPC${NC}"
 echo -e "  ${ORANGE}2.${NC} \033[0;36m Creating trojan Trial Account${NC}"
-echo -e "  ${ORANGE}3.${NC} \033[0;36m Delete Vless Account WS/GRPC${NC}"
+echo -e "  ${ORANGE}3.${NC} \033[0;36m Delete trojan Account WS/GRPC${NC}"
 echo -e "  ${ORANGE}4.${NC} \033[0;36m Renew trojan Account${NC}"
 echo -e "  ${ORANGE}5.${NC} \033[0;36m Check trojan login Account${NC}"
 echo -e "  ${ORANGE}6.${NC} \033[0;36m Edit Quota Account ${NC}"
@@ -206,11 +206,11 @@ echo -e "\033[0;35m└───────────────────�
 echo -e ""
 read -p "Select From Options [ 1 - 8 ] : " menu
 case $menu in
-1) clear ; add-vless ; exit ;;
-2) clear ; trialvless ; exit ;;
-3) clear ; del-vless ; exit ;;
-4) clear ; renew-vless ; exit ;;
-5) clear ; cek-vless ; exit ;;
+1) clear ; add-tr ;;
+2) clear ; trialtrojan ;;
+3) clear ; renew-tr ;;
+4) clear ; del-tr ;;
+5) clear ; cek-tr ;;
 6) clear ; editquota ; exit ;;
 7) clear ; editlimit ; exit ;;
 8) clear ; resquota ; exit ;;
