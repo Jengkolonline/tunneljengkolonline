@@ -52,30 +52,30 @@ checking_sc
 clear
 function editquota(){
 clear
-NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/vless/.vless.db")
+NUMBER_OF_CLIENTS=$(grep -c -E "^#& " "/etc/vless/.vless.db")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
                 clear
-        echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+        echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         echo -e "           Edit Quota Vless          \E[0m"
-        echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+        echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
                 echo ""
                 echo "You have no existing clients!"
                 echo ""
-                echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         echo ""
         read -n 1 -s -r -p "Press any key to back on menu"
         menu
         fi
 
         clear
-        echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+        echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "           Edit Quota Vless          \E[0m"
-    echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
-        grep -E "^### " "/etc/vless/.vless.db" | cut -d ' ' -f 2 | column -t | sort | uniq
+        grep -E "^#& " "/etc/vless/.vless.db" | cut -d ' ' -f 2 | column -t | sort | uniq
     echo ""
     red "tap enter to go back"
-    echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         read -rp "Input Username : " user
     if [ -z $user ]; then
     menu
@@ -83,14 +83,14 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/vless/.vless.db")
     read -p "Limit (Quota): " Quota
     echo -e "$[$Quota * 1024 * 1024 * 1024]" > /etc/vless/${user}
     clear
-    echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo " Vless Account Was Successfully Edited"
-    echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
     echo " Client Name  : $user"
     echo " Quota Ready  : $Quota GB"
     echo ""
-    echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
 
     fi
@@ -99,30 +99,30 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/vless/.vless.db")
 
 function editlimit(){
 clear
-NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/vless/.vless.db")
+NUMBER_OF_CLIENTS=$(grep -c -E "^#& " "/etc/vless/.vless.db")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
                 clear
-        echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+        echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         echo -e "           Edit Limit Vless          \E[0m"
-        echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+        echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
                 echo ""
                 echo "You have no existing clients!"
                 echo ""
-                echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         echo ""
         read -n 1 -s -r -p "Press any key to back on menu"
         menu
         fi
 
         clear
-        echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+        echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "           Edit Limit Vless          \E[0m"
-    echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
-        grep -E "^### " "/etc/vless/.vless.db" | cut -d ' ' -f 2 | column -t | sort | uniq
+        grep -E "^#& " "/etc/vless/.vless.db" | cut -d ' ' -f 2 | column -t | sort | uniq
     echo ""
     red "tap enter to go back"
-    echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         read -rp "Input Username : " user
     if [ -z $user ]; then
     menu
@@ -130,71 +130,71 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/vless/.vless.db")
     read -p "Limit (IP): " ips
     echo -e "${ips}" > /etc/vless/limit-ip/${user}
     clear
-    echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo " Vless Account Was Successfully Edited"
-    echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
     echo " Client Name  : $user"
     echo " Limit IP Ready  : $ips IP"
     echo ""
-    echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
     fi
 }
 function resquota(){
 clear
-NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/vless/.vless.db")
+NUMBER_OF_CLIENTS=$(grep -c -E "^#& " "/etc/vless/.vless.db")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
                 clear
-        echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+        echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         echo -e "           Resset Quota Vless          \E[0m"
-        echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+        echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
                 echo ""
                 echo "You have no existing clients!"
                 echo ""
-                echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         echo ""
         read -n 1 -s -r -p "Press any key to back on menu"
         menu
         fi
 
         clear
-        echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+        echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "           Resset Quota Vless          \E[0m"
-    echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
-        grep -E "^### " "/etc/vless/.vless.db" | cut -d ' ' -f 2 | column -t | sort | uniq
+        grep -E "^#& " "/etc/vless/.vless.db" | cut -d ' ' -f 2 | column -t | sort | uniq
     echo ""
     red "tap enter to go back"
-    echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         read -rp "Input Username : " user
     if [ -z $user ]; then
     menu
     else
     echo "0" > /etc/limit/vless/${user}
     clear
-    echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo " Vless Account Was Successfully Resset"
-    echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
     echo " Client Name  : $user"
     echo " Successfully Resset Quota"
     echo ""
-    echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
     fi
 }
 clear
 echo -e "\033[1;35m┌──────────────────────────────────────────┐\033[0m"
-echo -e "                 MENU VMESS              $NC"
+echo -e "                 MENU VLESS              $NC"
 echo -e "\033[1;35m└──────────────────────────────────────────┘\033[0m"
 echo -e "\033[1;35m┌──────────────────────────────────────────┐\033[0m"
 echo -e "\033[1;35m└──────────────────────────────────────────┘\033[0m"
-echo -e "  ${ORANGE}1.${NC} \033[0;36m Creating Vmess Account WS/GRPC${NC}"
-echo -e "  ${ORANGE}2.${NC} \033[0;36m Creating Vmess Trial Account${NC}"
-echo -e "  ${ORANGE}3.${NC} \033[0;36m Delete Vmess Account WS/GRPC${NC}"
-echo -e "  ${ORANGE}4.${NC} \033[0;36m Renew Vmess Account${NC}"
-echo -e "  ${ORANGE}5.${NC} \033[0;36m Check Vmess login Account${NC}"
+echo -e "  ${ORANGE}1.${NC} \033[0;36m Creating Vless Account WS/GRPC${NC}"
+echo -e "  ${ORANGE}2.${NC} \033[0;36m Creating Vless Trial Account${NC}"
+echo -e "  ${ORANGE}3.${NC} \033[0;36m Delete Vless Account WS/GRPC${NC}"
+echo -e "  ${ORANGE}4.${NC} \033[0;36m Renew Vless Account${NC}"
+echo -e "  ${ORANGE}5.${NC} \033[0;36m Check Vless login Account${NC}"
 echo -e "  ${ORANGE}6.${NC} \033[0;36m Edit Quota Account ${NC}"
 echo -e "  ${ORANGE}7.${NC} \033[0;36m Edit Limit IP Account${NC}"
 echo -e "  ${ORANGE}8.${NC} \033[0;36m Reset Quota Account${NC}"
