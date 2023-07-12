@@ -45,7 +45,7 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 read -p "Username : " Login
 read -p "Password : " Pass
 read -p "Expired (hari): " masaaktif
-read -p "Limit User (GB): " Quota
+#read -p "Limit User (GB): " Quota
 
 IP=$(curl -sS ifconfig.me);
 opensh=`cat /root/log-install.txt | grep -w "OpenSSH" | cut -f2 -d: | awk '{print $1}'`
@@ -61,6 +61,13 @@ OhpOVPN=`cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '
 
 sleep 1
 clear
+tgl=$(date -d "$masaaktif days" +"%d")
+bln=$(date -d "$masaaktif days" +"%b")
+thn=$(date -d "$masaaktif days" +"%Y")
+expe="$tgl $bln, $thn"
+tgl2=$(date +"%d")
+bln2=$(date +"%b")
+thn2=$(date +"%Y")
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
 exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
@@ -77,7 +84,7 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 echo -e "IP          : $IP" | tee -a /etc/log-create-user.log
 echo -e "Host        : $domen" | tee -a /etc/log-create-user.log
 echo -e "Host DNS    : $NS" | tee -a /etc/log-create-user.log
-echo -e "User Quota  : ${Quota} GB" | tee -a /etc/log-create-user.log
+#echo -e "User Quota  : ${Quota} GB" | tee -a /etc/log-create-user.log
 echo -e "PUB KEY     : ${PUB}" | tee -a /etc/log-create-user.log
 echo -e "OpenSSH     : $opensh" | tee -a /etc/log-create-user.log
 echo -e "Dropbear    : $db" | tee -a /etc/log-create-user.log
@@ -136,7 +143,7 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 echo -e "IP          : $IP" | tee -a /etc/log-create-user.log
 echo -e "Host        : $domen" | tee -a /etc/log-create-user.log
 echo -e "Host DNS    : $NS" | tee -a /etc/log-create-user.log
-echo -e "User Quota  : ${Quota} GB" | tee -a /etc/log-create-user.log
+#echo -e "User Quota  : ${Quota} GB" | tee -a /etc/log-create-user.log
 echo -e "PUB KEY     : ${PUB}" | tee -a /etc/log-create-user.log
 echo -e "OpenSSH     : $opensh" | tee -a /etc/log-create-user.log
 echo -e "Dropbear    : $db" | tee -a /etc/log-create-user.log
