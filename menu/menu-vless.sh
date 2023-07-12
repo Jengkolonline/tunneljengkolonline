@@ -207,11 +207,11 @@ echo -e "\033[1;35m└───────────────────�
 echo -e ""
 read -p "Select From Options [ 1 - 8 ] : " menu
 case $menu in
-1) clear ; add-ws ; exit ;;
-2) clear ; trialvmess ; exit ;;
-3) clear ; del-ws ; exit ;;
-4) clear ; renew-ws ; exit ;;
-5) clear ; cek-ws ; exit ;;
+1) clear ; add-vless ; exit ;;
+2) clear ; trialvless ; exit ;;
+3) clear ; del-vless ; exit ;;
+4) clear ; renew-vless ; exit ;;
+5) clear ; cek-vless ; exit ;;
 6) clear ; editquota ; exit ;;
 7) clear ; editlimit ; exit ;;
 8) clear ; resquota ; exit ;;
