@@ -51,7 +51,7 @@ checking_sc() {
 checking_sc
 function editquota(){
 clear
-NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/trojan/.trojan.db")
+NUMBER_OF_CLIENTS=$(grep -c -E "^#! " "/etc/trojan/.trojan.db")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
                 clear
         echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -71,7 +71,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/trojan/.trojan.db")
     echo -e "           Edit Quota Trojan          \E[0m"
     echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
-        grep -E "^### " "/etc/trojan/.trojan.db" | cut -d ' ' -f 2 | column -t | sort | uniq
+        grep -E "^#! " "/etc/trojan/.trojan.db" | cut -d ' ' -f 2 | column -t | sort | uniq
     echo ""
     red "tap enter to go back"
     echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -98,7 +98,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/trojan/.trojan.db")
 
 function editlimit(){
 clear
-NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/trojan/.trojan.db")
+NUMBER_OF_CLIENTS=$(grep -c -E "^#! " "/etc/trojan/.trojan.db")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
                 clear
         echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -118,7 +118,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/trojan/.trojan.db")
     echo -e "           Edit Limit Trojan          \E[0m"
     echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
-        grep -E "^### " "/etc/trojan/.trojan.db" | cut -d ' ' -f 2 | column -t | sort | uniq
+        grep -E "^#! " "/etc/trojan/.trojan.db" | cut -d ' ' -f 2 | column -t | sort | uniq
     echo ""
     red "tap enter to go back"
     echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -142,7 +142,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/trojan/.trojan.db")
 }
 function resquota(){
 clear
-NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/trojan/.trojan.db")
+NUMBER_OF_CLIENTS=$(grep -c -E "^#! " "/etc/trojan/.trojan.db")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
                 clear
         echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -162,7 +162,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/trojan/.trojan.db")
     echo -e "           Resset Quota Trojan          \E[0m"
     echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
-        grep -E "^### " "/etc/trojan/.trojan.db" | cut -d ' ' -f 2 | column -t | sort | uniq
+        grep -E "^#! " "/etc/trojan/.trojan.db" | cut -d ' ' -f 2 | column -t | sort | uniq
     echo ""
     red "tap enter to go back"
     echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -185,15 +185,15 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/trojan/.trojan.db")
 }
 clear
 echo -e "\033[0;35m┌──────────────────────────────────────────┐\033[0m"
-echo -e "                 MENU VLESS              $NC"
+echo -e "                 MENU Trojan              $NC"
 echo -e "\033[0;35m└──────────────────────────────────────────┘\033[0m"
 echo -e "\033[0;35m┌──────────────────────────────────────────┐\033[0m"
 echo -e "\033[0;35m└──────────────────────────────────────────┘\033[0m"
-echo -e "  ${ORANGE}1.${NC} \033[0;36m Creating Vless Account WS/GRPC${NC}"
-echo -e "  ${ORANGE}2.${NC} \033[0;36m Creating Vless Trial Account${NC}"
+echo -e "  ${ORANGE}1.${NC} \033[0;36m Creating trojan Account WS/GRPC${NC}"
+echo -e "  ${ORANGE}2.${NC} \033[0;36m Creating trojan Trial Account${NC}"
 echo -e "  ${ORANGE}3.${NC} \033[0;36m Delete Vless Account WS/GRPC${NC}"
-echo -e "  ${ORANGE}4.${NC} \033[0;36m Renew Vless Account${NC}"
-echo -e "  ${ORANGE}5.${NC} \033[0;36m Check Vless login Account${NC}"
+echo -e "  ${ORANGE}4.${NC} \033[0;36m Renew trojan Account${NC}"
+echo -e "  ${ORANGE}5.${NC} \033[0;36m Check trojan login Account${NC}"
 echo -e "  ${ORANGE}6.${NC} \033[0;36m Edit Quota Account ${NC}"
 echo -e "  ${ORANGE}7.${NC} \033[0;36m Edit Limit IP Account${NC}"
 echo -e "  ${ORANGE}8.${NC} \033[0;36m Reset Quota Account${NC}"
