@@ -52,7 +52,7 @@ OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{prin
 OhpDB=`cat /root/log-install.txt | grep -w "OHP DBear" | cut -d: -f2 | awk '{print $1}'`
 OhpOVPN=`cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '{print $1}'`
 
-read -p "  Expired (Minutes): " timer
+#read -p "  Expired (Minutes): " timer
 Login=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
 Pass=1
 Quota=1
@@ -62,7 +62,15 @@ sleep 0.5
 echo Setting Password: $Pass
 sleep 0.5
 clear
-useradd -e `date -d "$timer minutes" +"%Y-%m-%d"` -s /bin/false -M $Login
+tgl=$(date -d "$masaaktif days" +"%d")
+bln=$(date -d "$masaaktif days" +"%b")
+thn=$(date -d "$masaaktif days" +"%Y")
+expe="$tgl $bln, $thn"
+tgl2=$(date +"%d")
+bln2=$(date +"%b")
+thn2=$(date +"%Y")
+tnggl="$tgl2 $bln2, $thn2"
+useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
 exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
@@ -126,7 +134,17 @@ echo -e "URL TEX  :https://$IP:81/ssh-$Login.txt"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 
 else
-tmux new-session -d -s $Login "trial trialssh $Login $timer"
+mkdir -p /etc/ssh
+
+if [[ ${c} != "0" ]]; then
+  echo "${d}" >/etc/ssh/${Login}
+fi
+DATADB=$(cat /etc/ssh/.ssh.db | grep "^###" | grep -w "${Login}" | awk '{print $2}')
+if [[ "${DATADB}" != '' ]]; then
+  sed -i "/\b${Login}\b/d" /etc/ssh/.ssh.db
+fi
+echo "### ${Login} " >>/etc/ssh/.ssh.db
+echo ""
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\E[0;41;36m            TRIAL SSH              \E[0m"
@@ -186,5 +204,6 @@ echo -e "URL TEX  :https://$IP:81/ssh-$Login.txt"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 fi
 echo ""
+echo "killtrial ssh ${Login}" | at now +60 minutes &> /dev/null
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
