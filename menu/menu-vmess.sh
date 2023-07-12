@@ -197,17 +197,21 @@ echo -e "\033[1;35m└───────────────────�
 echo -e "\033[1;35m┌──────────────────────────────────────────┐\033[0m"
 echo -e "\033[1;35m└──────────────────────────────────────────┘\033[0m"
 echo -e "  ${ORANGE}1.${NC} \033[0;36m Creating Vmess Account WS/GRPC${NC}"
-echo -e "  ${ORANGE}1.${NC} \033[0;36m Creating Vmess Trial Account${NC}"
-echo -e "  ${ORANGE}2.${NC} \033[0;36m Delete Vmess Account WS/GRPC${NC}"
-echo -e "  ${ORANGE}3.${NC} \033[0;36m Renew Vmess Account${NC}"
-echo -e "  ${ORANGE}4.${NC} \033[0;36m Check Vmess login Account${NC}"
-echo -e "  ${ORANGE}5.${NC} \033[0;36m Edit Quota Account ${NC}"
-echo -e "  ${ORANGE}6.${NC} \033[0;36m Edit Limit IP Account${NC}"
-echo -e "  ${ORANGE}7.${NC} \033[0;36m Reset Quota Account${NC}"
+echo -e "  ${ORANGE}2.${NC} \033[0;36m Creating Vmess Trial Account${NC}"
+echo -e "  ${ORANGE}3.${NC} \033[0;36m Delete Vmess Account WS/GRPC${NC}"
+echo -e "  ${ORANGE}4.${NC} \033[0;36m Renew Vmess Account${NC}"
+echo -e "  ${ORANGE}5.${NC} \033[0;36m Check Vmess login Account${NC}"
+echo -e "  ${ORANGE}6.${NC} \033[0;36m Edit Quota Account ${NC}"
+echo -e "  ${ORANGE}7.${NC} \033[0;36m Edit Limit IP Account${NC}"
+echo -e "  ${ORANGE}8.${NC} \033[0;36m Reset Quota Account${NC}"
+echo -e ""
+echo -e " [\e[31m•0\e[0m] \e[31mBACK TO MENU\033[0m"
+echo -e ""
+echo -e   "Press x or [ Ctrl+C ] • To-Exit"
 echo -e "\033[1;35m┌──────────────────────────────────────────┐\033[0m"
 echo -e "\033[1;35m└──────────────────────────────────────────┘\033[0m"
 echo -e ""
-read -p "Select From Options [ 1 - 4 ] : " menu
+read -p "Select From Options [ 1 - 8 ] : " menu
 case $menu in
 1) clear ; add-ws ; exit ;;
 2) clear ; trialvmess ; exit ;;
@@ -217,16 +221,7 @@ case $menu in
 6) clear ; editquota ; exit ;;
 7) clear ; editlimit ; exit ;;
 8) clear ; resquota ; exit ;;
-5)
-    editquota
-    ;;
-6)
-    editlimit
-    ;;
-7)
-    resquota
-    ;;
-*)
-    menu
-    ;;
+0) clear ; menu ; exit ;;
+x) exit ;;
+*) echo "Anda salah tekan " ; sleep 1 ; menu ;;
 esac
