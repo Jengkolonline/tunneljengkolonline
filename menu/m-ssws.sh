@@ -57,6 +57,11 @@ echo -e " \033[35m│$NC [01]${NC} \033[0;36m Create Account Shadowshocks WS/GRP
 echo -e " \033[35m│$NC [02]${NC} \033[0;36m Trial Account Shadowsocks WS/GRPC${NC}"
 echo -e " \033[35m│$NC [03]${NC} \033[0;36m Renew Shadowsocks Account${NC}"
 echo -e " \033[35m│$NC [04]${NC} \033[0;36m Delet Shadowsocks Account${NC}"
+echo -e " \033[35m│$NC [05]${NC} \033[0;36m Chek Shadowsocks Login Account${NC}"
+echo -e " \033[35m│$NC"
+echo -e " \033[35m│$NC [\e[31m•0\e[0m] \e[31mBACK TO MENU\033[0m"
+echo -e " \033[35m│$NC"
+echo -e " \033[35m│$NC Press x or [ Ctrl+C ] • To-Exit"
 echo -e " \033[36m╰══════════════════════════════════════════════════════════╯\e[0m"
 echo -e " \033[31m##########\033[33m##########\033[32m##########\033[34m##########\033[35m##########\033[36m##########\e[0m"
 echo -e ""
@@ -66,6 +71,7 @@ case $menu in
 2) clear ; trialssws ;;
 3) clear ; renew-ssws ;;
 4) clear ; del-ssws ;;
+4) clear ; cek-ss ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo "salah tekan" ; sleep 1 ; m-ssws ;;
