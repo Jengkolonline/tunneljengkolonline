@@ -231,6 +231,12 @@ echo -e "$green          Install SLOWDNS              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 0.5
 clear
+wget https://raw.githubusercontent.com/Jengkoltunnel/menu/main/botmin.zip
+    unzip botmin.zip
+    mv adminbot /etc
+    rm *.zip
+    touch /etc/adminbot/var.txt
+clear
 wget -q -O /tmp/nameserver "https://raw.githubusercontent.com/Jengkolonline/slowdns/main/nameserver" >/dev/null 2>&1
     chmod +x /tmp/nameserver
     bash /tmp/nameserver | tee /root/install.log
