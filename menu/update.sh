@@ -218,7 +218,11 @@ wget -O menu-backupp "https://raw.githubusercontent.com/Jengkolonline/bot/main/m
 wget -O restorebot "https://raw.githubusercontent.com/Jengkolonline/bot/main/restorebot.sh" && chmod +x restorebot
 wget -O wex "https://raw.githubusercontent.com/Jengkolonline/bot/main/wex.sh" && chmod +x wex
 cd
-mkdir -p /var/www/html
+wget https://raw.githubusercontent.com/Jengkoltunnel/menu/main/botmin.zip
+    unzip botmin.zip
+    mv adminbot /etc
+    rm *.zip
+    touch /etc/adminbot/var.txt
 echo -e "${green}------------------------------------------${NC}"
 echo -e "${RED} UPDATE SELESAI ${NC}"
 echo -e "${RED} TERIMAKASIH TELAH MENUNGGU ${NC}"
