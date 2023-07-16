@@ -83,7 +83,7 @@ case $menu in
 7) clear ; delete ; exit ;;
 8) clear ; autokill ; exit ;;
 9) clear ; ceklim ; exit ;;
-0) clear ; menu ; exit ;;
+10) clear ; menu ; exit ;;
 x) exit ;;
 *) echo "Anda salah tekan " ; sleep 1 ; m-sshovpn ;;
 esac
