@@ -53,22 +53,25 @@ clear
 #Domain
 domain=$(cat /etc/xray/domain)
 
-echo -e "\033[0;35m┌──────────────────────────────────────────┐\033[0m"
-echo -e "                SSH & OpenVPN           "
-echo -e "\033[0;35m└──────────────────────────────────────────┘\033[0m"
-echo -e "\033[0;35m┌──────────────────────────────────────────┐\033[0m"
-echo -e "  ${ORANGE}[1].${NC}\033[0;36m Create SSH & OpenVPN Account${NC}"
-echo -e "  ${ORANGE}[2].${NC}\033[0;36m Trial SSH & OpenVPN ${NC}"
-echo -e "  ${ORANGE}[3].${NC}\033[0;36m Renew SSH & OpenVPN ${NC}"
-echo -e "  ${ORANGE}[4].${NC}\033[0;36m Check User Login SSH & OpenVPN${NC}"
-echo -e "  ${ORANGE}[5].${NC}\033[0;36m Daftar Member SSH & OpenVPN ${NC}"
-echo -e "  ${ORANGE}[6].${NC}\033[0;36m Hapus SSH & OpenVpn Account ${NC}"
-echo -e "  ${ORANGE}[7].${NC}\033[0;36m Hapus User Expired SSH & OpenVPN ${NC}"
-echo -e "  ${ORANGE}[8].${NC}\033[0;36m Set up Autokill SSH ${NC}"
-echo -e "  ${ORANGE}[9].${NC}\033[0;36m Cek User Multi Login SSH ${NC}"
-echo -e "  ${ORANGE}[10].${NC}\033[0;36mExit ${NC}"
-echo -e "\033[0;35m└──────────────────────────────────────────┘\033[0m"
-read -p "Select From Options [ 1 - 10 ] : " menu
+echo -e " \033[31m##########\033[33m##########\033[32m##########\033[34m##########\033[35m##########\033[36m##########\e[0m"
+echo -e " \033[31m╭══════════════════════════════════════════════════════════╮\e[0m"
+echo -e " \033[34m│$NC\033[33m                       MENU SSH                           $NC\033[34m│\e[0m"
+echo -e " \033[33m╰══════════════════════════════════════════════════════════╯\e[0m"
+echo -e " \033[32m╭══════════════════════════════════════════════════════════╮\e[0m"
+echo -e " \033[35m│$NC [1].${NC}\033[0;36m Create SSH & OpenVPN Account${NC}"
+echo -e " \033[35m│$NC [2].${NC}\033[0;36m Trial SSH & OpenVPN ${NC}"
+echo -e " \033[35m│$NC [3].${NC}\033[0;36m Renew SSH & OpenVPN ${NC}"
+echo -e " \033[35m│$NC [4].${NC}\033[0;36m Check User Login SSH & OpenVPN${NC}"
+echo -e " \033[35m│$NC [5].${NC}\033[0;36m Daftar Member SSH & OpenVPN ${NC}"
+echo -e " \033[35m│$NC [6].${NC}\033[0;36m Hapus SSH & OpenVpn Account ${NC}"
+echo -e " \033[35m│$NC [7].${NC}\033[0;36m Hapus User Expired SSH & OpenVPN ${NC}"
+echo -e " \033[35m│$NC [8].${NC}\033[0;36m Set up Autokill SSH ${NC}"
+echo -e " \033[35m│$NC [9].${NC}\033[0;36m Cek User Multi Login SSH ${NC}"                                                                   
+echo -e " \033[35m│$NC [10].${NC}\033[0;36mExit ${NC}"
+echo -e " \033[36m╰══════════════════════════════════════════════════════════╯\e[0m"
+echo -e " \033[31m##########\033[33m##########\033[32m##########\033[34m##########\033[35m##########\033[36m##########\e[0m"
+echo -e ""
+read -p " Select From Options [ 1 - 10 ] : " menu
 echo -e ""
 case $menu in
 1) clear ; usernew ; exit ;;
