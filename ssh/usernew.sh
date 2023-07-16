@@ -86,6 +86,7 @@ echo -e "Username    : $Login" | tee -a /etc/log-create-user.log
 echo -e "Password    : $Pass" | tee -a /etc/log-create-user.log
 echo -e "Expired On  : $exp" | tee -a /etc/log-create-user.log
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
+echo -e "Tinggal Copy: $domen:80/443@$Login:$Pass" | tee -a /etc/log-create-user.log
 echo -e "IP          : $IP" | tee -a /etc/log-create-user.log
 echo -e "Host        : $domen" | tee -a /etc/log-create-user.log
 echo -e "Host DNS    : $NS" | tee -a /etc/log-create-user.log
@@ -133,10 +134,61 @@ echo -e "
 GET wss://isi_bug_disini/ HTTP/1.1[crlf]Host: sshws.$domain[crlf]Upgrade: websocket[crlf]Connection: Keep-Alive[crlf][crlf]
 " | tee -a /etc/log-create-user.log
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
-echo -e "URL TEX  :https://$domen:81/ssh-$Login.txt"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
+#echo -e "URL TEX  :https://$domen:81/ssh-$Login.txt"
+#echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
 
 else
+
+cat >/var/www/html/ssh-$Login.txt <<-END
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            SSH Account            
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Username    : $Login
+Password    : $Pass
+Expired On  : $exp
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Tinggal Copy: $domen:80/443@$Login:$Pass
+IP          : $IP
+Host        : $domen
+Host DNS    : $NS
+PUB KEY     : ${PUB}
+OpenSSH     : $opensh
+Dropbear    : $db
+SSH-WS      : $portsshws
+SSH-SSL-WS  : $wsssl
+SSH-NOSSL-WS: 8880
+SSL/TLS     : $ssl
+OpenVPN TCP : 1194
+OpenVPN UDP : 2200
+OpenVPN SSL : 110
+OHP Dropbear: 8585
+OHP OpenSSH : 8686
+OHP OpenVPN : 8787
+Prot Squid  : $sqd
+UDPGW       : 7100-7300
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔰Account OpenVPN🔰 
+OpenVPN TCP : 1194 http://$IP:81/client-tcp-1194.ovpn
+OpenVPN UDP : 2200 http://$IP:81/client-udp-2200.ovpn
+OpenVPN SSL : 110 http://$IP:81/client-tcp-ssl.ovpn
+🔰Account OpenVPN OHP🔰 
+OpenVPN OHP : 8787 http://$MYIP:81/client-tcp-ohp1194.ovpn
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔰Account UDP 1🔰 
+$domen:54-65535@$Login:$Pass
+🔰Account UDP 2🔰 
+$IP:10000-10150@$Login:$Pass
+🔰Account UDP 3🔰 
+$domen:1-65535@$Login:$Pass
+\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Payload WSS
+GET wss://isi_bug_disini/ HTTP/1.1[crlf]Host: sshws.$domain[crlf]Upgrade: websocket[crlf]Connection: Keep-Alive[crlf][crlf]
+Payload WS
+GET / HTTP/1.1[crlf]Host: sshws.$domain[crlf]Upgrade: websocket[crlf][crlf]
+PAYLOAD WS OVPN HTTP
+GET wss://isi_bug_disini/ HTTP/1.1[crlf]Host: sshws.$domain[crlf]Upgrade: websocket[crlf]Connection: Keep-Alive[crlf][crlf]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+END
 
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
 echo -e "\E[0;41;36m            SSH Account            \E[0m" | tee -a /etc/log-create-user.log
@@ -145,6 +197,7 @@ echo -e "Username    : $Login" | tee -a /etc/log-create-user.log
 echo -e "Password    : $Pass" | tee -a /etc/log-create-user.log
 echo -e "Expired On  : $exp" | tee -a /etc/log-create-user.log
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
+echo -e "Tinggal Copy: $domen:80/443@$Login:$Pass" | tee -a /etc/log-create-user.log
 echo -e "IP          : $IP" | tee -a /etc/log-create-user.log
 echo -e "Host        : $domen" | tee -a /etc/log-create-user.log
 echo -e "Host DNS    : $NS" | tee -a /etc/log-create-user.log
