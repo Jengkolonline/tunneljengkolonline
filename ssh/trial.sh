@@ -54,6 +54,7 @@ OhpOVPN=`cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '
 
 #read -p "  Expired (Minutes): " timer
 Login=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
+hari="1"
 Pass=1
 Quota=1
 echo Ping Host
@@ -72,6 +73,8 @@ thn2=$(date +"%Y")
 tnggl="$tgl2 $bln2, $thn2"
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
 exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
+hariini=`date -d "0 days" +"%Y-%m-%d"`
+expi=`date -d "$masaaktif days" +"%Y-%m-%d"`
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 
@@ -256,8 +259,8 @@ GET wss://isi_bug_disini/ HTTP/1.1[crlf]Host: sshws.$domain[crlf]Upgrade: websoc
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "URL TEX  :https://$IP:81/ssh-$Login.txt"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-fi
 echo ""
 echo "killtrial ssh ${Login}" | at now +60 minutes &> /dev/null
+fi
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
