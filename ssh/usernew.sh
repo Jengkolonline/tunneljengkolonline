@@ -44,13 +44,15 @@ NS=`cat /etc/xray/dns`
 portsshws=`cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '{print $1}'`
 wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
 
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\E[0;41;36m            SSH Account            \E[0m"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e " \033[31m##########\033[33m##########\033[32m##########\033[34m##########\033[35m##########\033[36m##########\e[0m"
+echo -e " \033[31m╭══════════════════════════════════════════════════════════╮\e[0m"
+echo -e " \033[34m│$NC\033[33m                       SSH Account                        $NC\033[34m│\e[0m"
+echo -e " \033[33m╰══════════════════════════════════════════════════════════╯\e[0m"
+echo -e " \033[32m╭══════════════════════════════════════════════════════════╮\e[0m"
 read -p "Username : " Login
 read -p "Password : " Pass
 read -p "Expired (hari): " masaaktif
-#read -p "Limit User (GB): " Quota
+read -p "Limit User (GB): " Quota
 
 IP=$(curl -sS ifconfig.me);
 opensh=`cat /root/log-install.txt | grep -w "OpenSSH" | cut -f2 -d: | awk '{print $1}'`
@@ -77,6 +79,17 @@ useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
 exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
+mkdir -p /etc/ssh
+
+if [[ ${c} != "0" ]]; then
+  echo "${d}" >/etc/ssh/${Login}
+fi
+DATADB=$(cat /etc/ssh/.ssh.db | grep "^###" | grep -w "${Login}" | awk '{print $2}')
+if [[ "${DATADB}" != '' ]]; then
+  sed -i "/\b${Login}\b/d" /etc/ssh/.ssh.db
+fi
+echo "### ${Login} " >>/etc/ssh/.ssh.db
+echo ""
 
 if [[ ! -z "${PID}" ]]; then
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
@@ -90,7 +103,7 @@ echo -e "Tinggal Copy: $domen:80/443@$Login:$Pass" | tee -a /etc/log-create-user
 echo -e "IP          : $IP" | tee -a /etc/log-create-user.log
 echo -e "Host        : $domen" | tee -a /etc/log-create-user.log
 echo -e "Host DNS    : $NS" | tee -a /etc/log-create-user.log
-#echo -e "User Quota  : ${Quota} GB" | tee -a /etc/log-create-user.log
+echo -e "User Quota  : ${Quota} GB" | tee -a /etc/log-create-user.log
 echo -e "PUB KEY     : ${PUB}" | tee -a /etc/log-create-user.log
 echo -e "OpenSSH     : $opensh" | tee -a /etc/log-create-user.log
 echo -e "Dropbear    : $db" | tee -a /etc/log-create-user.log
@@ -152,6 +165,7 @@ IP          : $IP
 Host        : $domen
 Host DNS    : $NS
 PUB KEY     : ${PUB}
+User Quota  : ${Quota} GB
 OpenSSH     : $opensh
 Dropbear    : $db
 SSH-WS      : $portsshws
@@ -201,7 +215,7 @@ echo -e "Tinggal Copy: $domen:80/443@$Login:$Pass" | tee -a /etc/log-create-user
 echo -e "IP          : $IP" | tee -a /etc/log-create-user.log
 echo -e "Host        : $domen" | tee -a /etc/log-create-user.log
 echo -e "Host DNS    : $NS" | tee -a /etc/log-create-user.log
-#echo -e "User Quota  : ${Quota} GB" | tee -a /etc/log-create-user.log
+echo -e "User Quota  : ${Quota} GB" | tee -a /etc/log-create-user.log
 echo -e "PUB KEY     : ${PUB}" | tee -a /etc/log-create-user.log
 echo -e "OpenSSH     : $opensh" | tee -a /etc/log-create-user.log
 echo -e "Dropbear    : $db" | tee -a /etc/log-create-user.log
