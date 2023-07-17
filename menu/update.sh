@@ -218,6 +218,16 @@ wget -O menu-backupp "https://raw.githubusercontent.com/Jengkolonline/bot/main/m
 wget -O restorebot "https://raw.githubusercontent.com/Jengkolonline/bot/main/restorebot.sh" && chmod +x restorebot
 wget -O wex "https://raw.githubusercontent.com/Jengkolonline/bot/main/wex.sh" && chmod +x wex
 cd
+apt -y install nginx
+cd
+rm /etc/nginx/sites-enabled/default
+rm /etc/nginx/sites-available/default
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/ssh/nginx.conf"
+mkdir -p /home/vps/public_html
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Jengkolonline/vpn/main/vps.conf"
+/etc/init.d/nginx restart
+
+
 echo -e "${green}------------------------------------------${NC}"
 echo -e "${RED} UPDATE SELESAI ${NC}"
 echo -e "${RED} TERIMAKASIH TELAH MENUNGGU ${NC}"
