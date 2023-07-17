@@ -20,7 +20,7 @@ Auto Script Install JENGKOLONLINE
 # BERLICENCY, HUBUNGI WA DI BAWAH JIKA INGIN MENGGUNAKANNYA
 https://w.me//6282372139631
 # Ling Instalasi
-<pre><code>sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl unzip && wget https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/setup.sh && chmod +x setup.sh && sed -i -e 's/\r$//' setup.sh && screen -S setup ./setup.sh</code></pre>
+<pre><code>wget --no-check-certificate https://jengkolonline.biz.id/setup.sh && chmod +x setup.sh && ./setup.sh</code></pre>
 
 ____________________________________________
 |        SERVICE          |      PORT      |
@@ -83,7 +83,8 @@ ____________________________________________
 | OHP Dropbear            |  8585          |
 | OHP SSH                 |  8686          |
 | OHP OpenVPN             |  8787          |
-| Dns Global              |  👩‍💻            |
+| Psiphon                 |  💯            |
+| Dns Global              |  💯            |
 | Netflix                 |  💯            |
 | YouTube                 |  💯            |
 | Tik Tok                 |  💯            |
