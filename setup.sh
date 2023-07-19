@@ -32,6 +32,7 @@ Repo1="https://raw.githubusercontent.com/Jengkolonline/izinn/main/"
 export MYIP=$( curl -s https://ipinfo.io/ip/ )
 Name=$(curl -sS ${Repo1}ip | grep $MYIP | awk '{print $2}')
 Exp=$(curl -sS ${Repo1}ip | grep $MYIP | awk '{print $3}')
+IPVPS=$(curl -s ipinfo.io/ip )
 red='\e[1;31m'
 green='\e[0;32m'
 yell='\e[1;33m'
@@ -195,6 +196,8 @@ read -rp "Input ur domain : " -e pp
 
 function password_default() {
     domain=$(cat /root/domain)
+    CITY=$(curl -s ipinfo.io/city )
+    WKT=$(curl -s ipinfo.io/timezone )
     userdel jame > /dev/null 2>&1
     Username="bokzzz"
     Password=bokzzz
@@ -211,11 +214,13 @@ function password_default() {
    
     ============================
     <code>Domain     :</code> <code>$domain</code>
-    <code>IP Vps     :</code> <code>$IP</code>
+    <code>IP Vps     :</code> <code>$IPVPS</code>
     <code>User Login :</code> <code>bok</code>
     <code>Pass Login :</code> <code>bok</code>
     <code>User Script:</code> <code>$Name</code>
     <code>Exp Script :</code> <code>$Exp</code>
+    <code>Location   :</code> <code>$CITY</code>
+    <code>Timezone   :</code> <code>$WKT</code>
     ============================
     Multi Port By JengkolOnline
     ============================
