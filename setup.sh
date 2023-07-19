@@ -409,7 +409,10 @@ rm /root/nontls.sh >/dev/null 2>&1
 rm /root/vpn.sh >/dev/null 2>&1
 rm /root/set-br.sh >/dev/null 2>&1
 rm /root/tmp/nameserver >/dev/null 2>&1
-rm /root//tmp/gotop.deb >/dev/null 2>&1
+rm /root/tmp/gotop.deb >/dev/null 2>&1
+rm /root/ohp-dropbear.sh >/dev/null 2>&1
+rm /root/ohp-ssh.sh >/dev/null 2>&1
+rm /root/ohp.sh >/dev/null 2>&1
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 echo -e "
 "
