@@ -272,7 +272,17 @@ sleep 0.5
 clear
 wget https://raw.githubusercontent.com/Jengkolonline/backup/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "$green          Install SLOWDNS              $NC"
+echo -e "$green          Install Gotop              $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sleep 0.5
+clear
+gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
+    gotop_link="https://github.com/xxxserxxx/gotop/releases/download/v$gotop_latest/gotop_v"$gotop_latest"_linux_amd64.deb"
+    curl -sL "$gotop_link" -o /tmp/gotop.deb
+    dpkg -i /tmp/gotop.deb >/dev/null 2>&1
+clear
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green          Install bot              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 0.5
 clear
@@ -282,6 +292,11 @@ wget https://raw.githubusercontent.com/Jengkoltunnel/v3/main/botmin.zip
     rm *.zip
     mkdir /etc/adminbot/var.txt
     touch /etc/adminbot/var.txt
+clear
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green          Install SLOWDNS              $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sleep 0.5
 clear
 wget -q -O /tmp/nameserver "https://raw.githubusercontent.com/Jengkolonline/slowdns/main/nameserver" >/dev/null 2>&1
     chmod +x /tmp/nameserver
@@ -393,7 +408,8 @@ rm /root/insshws.sh >/dev/null 2>&1
 rm /root/nontls.sh >/dev/null 2>&1
 rm /root/vpn.sh >/dev/null 2>&1
 rm /root/set-br.sh >/dev/null 2>&1
-rm /root//tmp/nameserver >/dev/null 2>&1
+rm /root/tmp/nameserver >/dev/null 2>&1
+rm /root//tmp/gotop.deb >/dev/null 2>&1
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 echo -e "
 "
