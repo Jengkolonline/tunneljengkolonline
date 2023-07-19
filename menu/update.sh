@@ -198,17 +198,14 @@ wget -O trialssws "https://raw.githubusercontent.com/Jengkolonline/supreme/main/
 wget -O del-ssws "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/del-ssws.sh" && chmod +x del-ssws
 wget -O renew-ssws "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/renew-ssws.sh" && chmod +x renew-ssws
 wget -O tcp "https://raw.githubusercontent.com/Jengkolonline/supreme/main/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
-#all
 wget -O nf "https://raw.githubusercontent.com/Jengkolonline/nonton/main/nf.sh" && chmod +x nf
 wget -O menu-tambah "https://raw.githubusercontent.com/Jengkolonline/begeg/main/menu-tambah.sh" && chmod +x menu-tambah
 wget -O global "https://raw.githubusercontent.com/Jengkolonline/gelo/main/gelo.sh" && chmod +x global
 wget -O sc "https://raw.githubusercontent.com/Jengkolonline/begeg/main/sc.sh" && chmod +x sc
 wget -O killtrial "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/killtrial.sh" && chmod +x killtrial
-#Edit Quota
 wget -O jilmek "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/jilmek.sh" && chmod +x jilmek
-#Limit IP
-wget -x bdsm "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/bdsm.sh" && chmod +x bdsm
-wget -x limiter "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/limiter.sh" && chmod +x limiter
+wget -O bdsm "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/bdsm.sh" && chmod +x bdsm
+wget -O limiter "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/limiter.sh" && chmod +x limiter
 wget -O bot-cek-login-ssh "https://raw.githubusercontent.com/Jengkolonline/bot/main/bot-cek-login-ssh.sh" && chmod +x bot-cek-login-ssh
 wget -O bot-cek-tr "https://raw.githubusercontent.com/Jengkolonline/bot/main/bot-cek-tr.sh" && chmod +x bot-cek-tr
 wget -O bot-cek-vless "https://raw.githubusercontent.com/Jengkolonline/bot/main/bot-cek-vless.sh" && chmod +x bot-cek-vless
