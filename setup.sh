@@ -28,6 +28,10 @@ checking_sc() {
 }
 checking_sc
 clear
+Repo1="https://raw.githubusercontent.com/Jengkolonline/izinn/main/"
+export MYIP=$( curl -s https://ipinfo.io/ip/ )
+Name=$(curl -sS ${Repo1}ip | grep $MYIP | awk '{print $2}')
+Exp=$(curl -sS ${Repo1}ip | grep $MYIP | awk '{print $3}')
 red='\e[1;31m'
 green='\e[0;32m'
 yell='\e[1;33m'
@@ -210,8 +214,8 @@ function password_default() {
     <code>IP Vps     :</code> <code>$IP</code>
     <code>User Login :</code> <code>bok</code>
     <code>Pass Login :</code> <code>bok</code>
-    <code>User Script:</code> <code>$username</code>
-    <code>Exp Script :</code> <code>$exp</code>
+    <code>User Script:</code> <code>$Name</code>
+    <code>Exp Script :</code> <code>$Exp</code>
     ============================
     Multi Port By JengkolOnline
     ============================
