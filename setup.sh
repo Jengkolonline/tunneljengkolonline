@@ -286,11 +286,11 @@ echo -e "$green          Install bot              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 0.5
 clear
+mkdir -p /etc/adminbot/var.txt
 wget https://raw.githubusercontent.com/Jengkoltunnel/v3/main/botmin.zip
     unzip botmin.zip
     mv adminbot /etc
     rm *.zip
-    mkdir /etc/adminbot/var.txt
     touch /etc/adminbot/var.txt
 clear
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
