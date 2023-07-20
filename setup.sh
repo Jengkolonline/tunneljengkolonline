@@ -163,6 +163,10 @@ chmod 644 /root/.profile
 echo -e "[ ${green}INFO${NC} ] Preparing the install file"
 apt install git curl -y >/dev/null 2>&1
 apt install python -y >/dev/null 2>&1
+sudo apt-get install python3.7-dev >/dev/null 2>&1
+apt install python3.7-distutils >/dev/null 2>&1
+python3.7 -m pip install telethon >/dev/null 2>&1
+python3.7 -m pip install pyarmor >/dev/null 2>&1
 echo -e "[ ${green}INFO${NC} ] Aight good ... installation file is ready"
 sleep 2
 echo -ne "[ ${green}INFO${NC} ] Check permission : "
@@ -171,10 +175,6 @@ mkdir -p /var/lib/SIJA >/dev/null 2>&1
 echo "IP=" >> /var/lib/SIJA/ipvps.conf
 
 echo ""
-sudo apt-get install python3.7-dev 
-apt install python3.7-distutils
-python3.7 -m pip install telethon
-python3.7 -m pip install pyarmor
 wget -q https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/tools.sh;chmod +x tools.sh;./tools.sh
 rm tools.sh
 clear
@@ -321,6 +321,21 @@ rm /root/log-install.txt > /dev/null 2>&1
 fi
 if [ -f "/etc/afak.conf" ]; then
 rm /etc/afak.conf > /dev/null 2>&1
+fi
+if [ ! -f "/etc/log-create-ssh.log" ]; then
+echo "Log SSH Account " > /etc/log-create-ssh.log
+fi
+if [ ! -f "/etc/log-create-vmess.log" ]; then
+echo "Log Vmess Account " > /etc/log-create-vmess.log
+fi
+if [ ! -f "/etc/log-create-vless.log" ]; then
+echo "Log Vless Account " > /etc/log-create-vless.log
+fi
+if [ ! -f "/etc/log-create-trojan.log" ]; then
+echo "Log Trojan Account " > /etc/log-create-trojan.log
+fi
+if [ ! -f "/etc/log-create-shadowsocks.log" ]; then
+echo "Log Shadowsocks Account " > /etc/log-create-shadowsocks.log
 fi
 if [ ! -f "/etc/log-create-user.log" ]; then
 echo "Log All Account " > /etc/log-create-user.log
