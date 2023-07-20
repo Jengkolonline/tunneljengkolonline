@@ -213,11 +213,12 @@ wget -O bot-cek-ws "https://raw.githubusercontent.com/Jengkolonline/bot/main/bot
 wget -O bot-member-ssh "https://raw.githubusercontent.com/Jengkolonline/bot/main/bot-member-ssh" && chmod +x bot-member-ssh
 wget -O menu-backupp "https://raw.githubusercontent.com/Jengkolonline/bot/main/menu-backupp.sh" && chmod +x menu-backupp
 wget -O restorebot "https://raw.githubusercontent.com/Jengkolonline/bot/main/restorebot.sh" && chmod +x restorebot
-wget -O wex "https://raw.githubusercontent.com/Jengkolonline/bot/main/wex.sh" && chmod +x wex
+#wget -O wex "https://raw.githubusercontent.com/Jengkolonline/bot/main/wex.sh" && chmod +x wex
 cd
-mkdir -p /etc/{xray,vmess,websocket,vless,trojan,shadowsocks}
+mkdir -p /etc/{bot,xray,vmess,websocket,vless,trojan,shadowsocks}
 touch /var/log/xray/{access.log,error.log}
 chmod 777 /var/log/xray/*.log
+touch /etc/bot/.bot.db
 touch /etc/vmess/.vmess.db
 touch /etc/vless/.vless.db
 touch /etc/trojan/.trojan.db
