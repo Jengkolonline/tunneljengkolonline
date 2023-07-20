@@ -214,6 +214,8 @@ wget -O bot-member-ssh "https://raw.githubusercontent.com/Jengkolonline/bot/main
 wget -O menu-backupp "https://raw.githubusercontent.com/Jengkolonline/bot/main/menu-backupp.sh" && chmod +x menu-backupp
 wget -O restorebot "https://raw.githubusercontent.com/Jengkolonline/bot/main/restorebot.sh" && chmod +x restorebot
 #wget -O wex "https://raw.githubusercontent.com/Jengkolonline/bot/main/wex.sh" && chmod +x wex
+wget -O add-bot-notif "https://raw.githubusercontent.com/Jengkolonline/bot/main/add-bot-notif.sh" && chmod +x add-bot-notif
+wget -O del-bot-notif "https://raw.githubusercontent.com/Jengkolonline/bot/main/del-bot-notif.sh" && chmod +x del-bot-notif
 cd
 mkdir -p /etc/{bot,xray,vmess,websocket,vless,trojan,shadowsocks}
 touch /var/log/xray/{access.log,error.log}
