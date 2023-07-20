@@ -214,7 +214,16 @@ wget -O bot-member-ssh "https://raw.githubusercontent.com/Jengkolonline/bot/main
 wget -O menu-backupp "https://raw.githubusercontent.com/Jengkolonline/bot/main/menu-backupp.sh" && chmod +x menu-backupp
 wget -O restorebot "https://raw.githubusercontent.com/Jengkolonline/bot/main/restorebot.sh" && chmod +x restorebot
 wget -O wex "https://raw.githubusercontent.com/Jengkolonline/bot/main/wex.sh" && chmod +x wex
-
+cd
+mkdir -p /etc/{xray,vmess,websocket,vless,trojan,shadowsocks}
+touch /var/log/xray/{access.log,error.log}
+chmod 777 /var/log/xray/*.log
+touch /etc/vmess/.vmess.db
+touch /etc/vless/.vless.db
+touch /etc/trojan/.trojan.db
+touch /etc/ssh/.ssh.db
+touch /etc/shadowsocks/.shadowsocks.db
+clear
 echo -e "${green}------------------------------------------${NC}"
 echo -e "${RED} UPDATE SELESAI ${NC}"
 echo -e "${RED} TERIMAKASIH TELAH MENUNGGU ${NC}"
