@@ -169,10 +169,10 @@ chmod +x menu-wg
 
 # vmess
 echo -e "${Green}[ INFO ]${NC} ${Green}Downloading Main Vmess${NC}"
-wget -O add-ws "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/add-ws.sh" && chmod +x add-ws
-wget -O trialvmess "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/trialvmess.sh" && chmod +x trialvmess
-wget -O renew-ws "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/renew-ws.sh" && chmod +x renew-ws
-wget -O del-ws "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/del-ws.sh" && chmod +x del-ws
+wget -O addws "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/addws.sh" && chmod +x addws
+wget -O trialws "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/trialws.sh" && chmod +x trialws
+wget -O renewws "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/renewws.sh" && chmod +x renewws
+wget -O delws "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/delws.sh" && chmod +x delws
 wget -O cek-ws "https://raw.githubusercontent.com/Jengkolonline/supreme/main/xray/cek-ws.sh" && chmod +x cek-ws
 sleep 0.5
 # vless
