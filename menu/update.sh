@@ -211,16 +211,6 @@ wget -O backupbot "https://raw.githubusercontent.com/Jengkolonline/bot/main/back
 wget -O restorebot "https://raw.githubusercontent.com/Jengkoltunnel/supreme/main/restorebot.sh" && chmod +x restorebot
 #wget -O add-bot-notif "https://raw.githubusercontent.com/Jengkolonline/bot/main/add-bot-notif.sh" && chmod +x add-bot-notif
 #wget -O del-bot-notif "https://raw.githubusercontent.com/Jengkolonline/bot/main/del-bot-notif.sh" && chmod +x del-bot-notif
-cd
-mkdir -p /etc/{bot,xray,vmess,websocket,vless,trojan,shadowsocks}
-touch /var/log/xray/{access.log,error.log}
-chmod 777 /var/log/xray/*.log
-touch /etc/bot/.bot.db
-touch /etc/vmess/.vmess.db
-touch /etc/vless/.vless.db
-touch /etc/trojan/.trojan.db
-touch /etc/ssh/.ssh.db
-touch /etc/shadowsocks/.shadowsocks.db
 clear
 echo -e "${green}------------------------------------------${NC}"
 echo -e "${RED} UPDATE SELESAI ${NC}"
