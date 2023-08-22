@@ -230,7 +230,7 @@ echo -e "OHP Dropbear: 8585" | tee -a /etc/log-create-user.log
 echo -e "OHP OpenSSH : 8686" | tee -a /etc/log-create-user.log
 echo -e "OHP OpenVPN : 8787" | tee -a /etc/log-create-user.log
 echo -e "Prot Squid  : $sqd" | tee -a /etc/log-create-user.log
-echo -e "UDPGW       : 7100-7300" | tee -a /etc/log-create-user.log
+echo -e "UDPGW       : 7100-7300-7900" | tee -a /etc/log-create-user.log
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
 echo -e " 🔰Account OpenVPN🔰 "
 echo -e "OpenVPN TCP : 1194 http://$IP:81/client-tcp-1194.ovpn"
@@ -246,6 +246,10 @@ echo -e "$IP:10000-10150@$Login:$Pass"
 echo -e " 🔰Account UDP 3🔰 "
 echo -e "$domen:1-65535@$Login:$Pass"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
+echo -e "PAYLOAD ANDALAN Admin" | tee -a /etc/log-create-user.log
+echo -e "
+GET / HTTP/1.1[crlf]Host: [host][crlf]Connten-Lenght: @Jengkol_Online[crlf]Connection: Upgrade[crlf]Upgrade: websocket[crlf][crlf]
+" | tee -a /etc/log-create-user.log
 echo -e "Payload WSS" | tee -a /etc/log-create-user.log
 echo -e "
 GET wss://isi_bug_disini/ HTTP/1.1[crlf]Host: sshws.$domain[crlf]Upgrade: websocket[crlf]Connection: Keep-Alive[crlf][crlf]
