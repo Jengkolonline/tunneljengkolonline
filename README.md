@@ -65,6 +65,18 @@ ____________________________________________
 | CDN None TLS ymil       |  80            |
 | CDN Grpc ymil           |  443           |
 | OpenClash TLS ymil      |  443           |
+| Shadowsocks2022 WS TLS  |  443,          |
+| Shadowsocks2022 none TLS|  80,           |            
+| Shadowsocks2022 Grpc    |  443           |
+| CDN TLS ymil            |  443           |
+| CDN None TLS ymil       |  80            |
+| CDN Grpc ymil           |  443           |
+| Socks5 WS TLS           |  443,          |
+| Socks5 none TLS         |  80,           |            
+| Socks5 Grpc             |  443           |
+| CDN TLS ymil            |  443           |
+| CDN None TLS ymil       |  80            |
+| CDN Grpc ymil           |  443           |          
 | Trojan Go               |  443           |
 | UDP                     |  54-65535      |
 | UDP                     |  10000-10150   |
@@ -83,7 +95,10 @@ ____________________________________________
 | OHP Dropbear            |  8585          |
 | OHP SSH                 |  8686          |
 | OHP OpenVPN             |  8787          |
-| Psiphon                 |  💯            |
+| Psiphon                 |  8443          |
+| Https | 443, 2053, 2083, 2087, 2096, 8443|
+| Http  | 80, 8080,8880,2052,2082,2086,2095|
+| Xray Mod                |  D            |
 | Dns Global              |  💯            |
 | Netflix                 |  💯            |
 | YouTube                 |  💯            |
@@ -102,7 +117,7 @@ ____________________________________________
 - IPtables                : [ON]
 - Auto-Reboot             : [ON]
 - IPv6                    : [OFF]
-- Autoreboot On 05.00 GMT +8 
+- Autoreboot On 02.00 GMT +8 
 - Autobackup Data 
 - Admin Control  
 - Restore Data
