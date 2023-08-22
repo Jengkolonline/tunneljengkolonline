@@ -65,19 +65,6 @@ ____________________________________________
 | CDN None TLS ymil       |  80            |
 | CDN Grpc ymil           |  443           |
 | OpenClash TLS ymil      |  443           |
-| Shadowsocks2022 WS TLS  |  443,          |
-| Shadowsocks2022 none TLS|  80,           |            
-| Shadowsocks2022 Grpc    |  443           |
-| CDN TLS ymil            |  443           |
-| CDN None TLS ymil       |  80            |
-| CDN Grpc ymil           |  443           |
-| Socks5 WS TLS           |  443,          |
-| Socks5 none TLS         |  80,           |            
-| Socks5 Grpc             |  443           |
-| CDN TLS ymil            |  443           |
-| CDN None TLS ymil       |  80            |
-| CDN Grpc ymil           |  443           |          
-| Trojan Go               |  443           |
 | UDP                     |  54-65535      |
 | UDP                     |  10000-10150   |
 | UDP                     |  1-65535       |
@@ -100,14 +87,15 @@ ____________________________________________
 | Http  | 80, 8080, 8880, 2052, 2082, 2086, 2095|
 | Core Mod                |  dharak36      |
 | json Mod                |  jengkolonline |
-| Dns Global              |  💯            |
-| Netflix                 |  💯            |
-| YouTube                 |  💯            |
-| Tik Tok                 |  💯            |
-| iQiyi                   |  💯            |
-| Viu.com                 |  💯            |
-| Hostar                  |  💯            |
-| Steam                   |  💯            |
+| Dns Halium              |  🌐            |
+| Dns Global              |  🌐            |
+| Netflix                 |  🌐            |
+| YouTube                 |  🌐            |
+| Tik Tok                 |  🌐            |
+| iQiyi                   |  🌐            |
+| Viu.com                 |  🌐            |
+| Hostar                  |  🌐            |
+| Steam                   |  🌐            |
 --------------------------------------------
 
 ## _Server Features :_ 
