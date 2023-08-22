@@ -97,7 +97,7 @@ vless_nontls_v2ray_status=$(systemctl status xray | grep Active | awk '{print $3
 #ssr_status=$(systemctl status ssrmu | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 trojan_server=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 dropbear_status=$(/etc/init.d/dropbear status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-stunnel_service=$(/etc/init.d/stunnel4 status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+stunnel_service=$(/etc/init.d/stunnel5 status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #sstp_service=$(systemctl status accel-ppp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 squid_service=$(/etc/init.d/squid status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 ssh_service=$(/etc/init.d/ssh status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
@@ -304,7 +304,7 @@ echo -e " ${blue}│ ❇️ OHP SSH                 :$status_openvpn"
 echo -e " ${blue}│ ❇️ OHP SSL                 :$status_openvpn"
 echo -e " ${blue}│ ❇️ BadVPN 7100-7900        :$status_openvpn"
 echo -e " ${blue}│ ❇️ Dropbear                :$status_beruangjatuh"
-echo -e " ${blue}│ ❇️ Stunnel4                :$status_stunnel"
+echo -e " ${blue}│ ❇️ Stunnel5                :$status_stunnel"
 echo -e " ${blue}│ ❇️ Squid                   :$status_squid"
 echo -e " ${blue}│ ❇️ Fail2Ban                :$status_fail2ban"
 echo -e " ${blue}│ ❇️ Crons                   :$status_cron"
