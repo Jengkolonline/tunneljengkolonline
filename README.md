@@ -97,8 +97,9 @@ ____________________________________________
 | OHP OpenVPN             |  8787          |
 | Psiphon                 |  8443          |
 | Https | 443, 2053, 2083, 2087, 2096, 8443|
-| Http  | 80, 8080,8880,2052,2082,2086,2095|
-| Xray Mod                |  D            |
+| Http  | 80, 8080, 8880, 2052, 2082, 2086, 2095|
+| Core Mod                |  dharak36      |
+| json Mod                |  jengkolonline |
 | Dns Global              |  💯            |
 | Netflix                 |  💯            |
 | YouTube                 |  💯            |
