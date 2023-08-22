@@ -181,49 +181,34 @@ wget -O menu-bot "https://raw.githubusercontent.com/Jengkolonline/bot/main/menu-
 wget -O bot-cek-ssws "https://raw.githubusercontent.com/Jengkolonline/bot/main/bot-cek-ssws.sh" && chmod +x bot-cek-ssws
 wget -O backupbot "https://raw.githubusercontent.com/Jengkolonline/bot/main/backupbot.sh" && chmod +x backupbot
 wget -O restorebot "https://raw.githubusercontent.com/Jengkoltunnel/supreme/main/restorebot.sh" && chmod +x restorebot
-clear
-cd
-apt -y install dropbear
-sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=143/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 50000 -p 109 -p 110 -p 69"/g' /etc/default/dropbear
-echo "/bin/false" >> /etc/shells
-echo "/usr/sbin/nologin" >> /etc/shells
-/etc/init.d/ssh restart
-/etc/init.d/dropbear restart
-cd
-apt install stunnel4 -y
-cat > /etc/stunnel/stunnel.conf <<-END
-cert = /etc/stunnel/stunnel.pem
-client = no
-socket = a:SO_REUSEADDR=1
-socket = l:TCP_NODELAY=1
-socket = r:TCP_NODELAY=1
-[dropbear]
-accept = 222
-connect = 127.0.0.1:22
-[dropbear]
-accept = 777
-connect = 127.0.0.1:109
-[ws-stunnel]
-accept = 2096
-connect = 700
-[openvpn]
-accept = 442
-connect = 127.0.0.1:1194
-END
-openssl genrsa -out key.pem 2048
-openssl req -new -x509 -key key.pem -out cert.pem -days 1095 \
--subj "/C=$country/ST=$state/L=$locality/O=$organization/OU=$organizationalunit/CN=$commonname/emailAddress=$email"
-cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
-sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
-/etc/init.d/stunnel4 restart
-echo -e "[ ${green}ok${NC} ] Restarting ssh "
-/etc/init.d/dropbear restart >/dev/null 2>&1
-sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting fail2ban "
-/etc/init.d/stunnel4 restart >/dev/null 2>&1
-sleep 1
+wget -O shadowsocks2022 "https://raw.githubusercontent.com/Jengkoltunnel/supreme/main/xray/shadowsocks2022.sh"
+wget -O socks "https://raw.githubusercontent.com/Jengkoltunnel/supreme/main/xray/socks.sh"
+wget -O add-socks "https://raw.githubusercontent.com/Jengkoltunnel/supreme/main/xray/add-socks.sh"
+wget -O cek-socks "https://raw.githubusercontent.com/Jengkoltunnel/supreme/main/xray/cek-socks.sh"
+wget -O del-socks "https://raw.githubusercontent.com/Jengkoltunnel/supreme/main/xray/del-socks.sh"
+wget -O extend-socks "https://raw.githubusercontent.com/Jengkoltunnel/supreme/main/xray/extend-socks.sh"
+wget -O trialsocks "https://raw.githubusercontent.com/Jengkoltunnel/supreme/main/xray/trialsocks.sh"
+wget -O add-ss2022 "https://raw.githubusercontent.com/Jengkoltunnel/supreme/main/xray/add-ss2022.sh"
+wget -O cek-ss2022 "https://raw.githubusercontent.com/Jengkoltunnel/supreme/main/xray/cek-ss2022.sh"
+wget -O del-ss2022 "https://raw.githubusercontent.com/Jengkoltunnel/supreme/main/xray/del-ss2022.sh"
+wget -O extend-ss2022 "https://raw.githubusercontent.com/Jengkoltunnel/supreme/main/xray/extend-ss2022.sh"
+wget -O trialss2022 "https://raw.githubusercontent.com/Jengkoltunnel/supreme/main/xray/trialss2022.sh"
+wget -O xraymod "https://raw.githubusercontent.com/Jengkoltunnel/supreme/main/xray/xraymod.sh"
+wget -O xrayofficial "https://raw.githubusercontent.com/Jengkoltunnel/supreme/main/xray/xrayofficial.sh"
+chmod +x add-ss2022
+chmod +x del-ss2022
+chmod +x extend-ss2022
+chmod +x trialss2022
+chmod +x cek-ss2022
+chmod +x add-socks
+chmod +x del-socks
+chmod +x extend-socks
+chmod +x trialsocks
+chmod +x cek-socks
+chmod +x shadowsocks2022
+chmod +x socks
+chmod +x xraymod
+chmod +x xrayofficial
 clear
 echo -e "${green}------------------------------------------${NC}"
 echo -e "${RED} UPDATE SELESAI ${NC}"
