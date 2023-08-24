@@ -97,7 +97,7 @@ vless_nontls_v2ray_status=$(systemctl status xray | grep Active | awk '{print $3
 #ssr_status=$(systemctl status ssrmu | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 trojan_server=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 dropbear_status=$(/etc/init.d/dropbear status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-stunnel_service=$(/etc/init.d/stunnel4 status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+stunnel_service=$(/etc/init.d/stunnel5 status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #sstp_service=$(systemctl status accel-ppp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 squid_service=$(/etc/init.d/squid status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 ssh_service=$(/etc/init.d/ssh status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
@@ -106,8 +106,8 @@ cron_service=$(/etc/init.d/cron status | grep Active | awk '{print $3}' | cut -d
 fail2ban_service=$(/etc/init.d/fail2ban status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #wg="$(systemctl show wg-quick@wg0.service --no-page)"
 #swg=$(echo "${wg}" | grep 'ActiveState=' | cut -f2 -d=)
-#trgo="$(systemctl show trojan-go.service --no-page)"                                      
-#strgo=$(echo "${trgo}" | grep 'ActiveState=' | cut -f2 -d=)  
+trgo="$(systemctl show trojan-go.service --no-page)"                                      
+strgo=$(echo "${trgo}" | grep 'ActiveState=' | cut -f2 -d=)  
 #sswg=$(systemctl status wg-quick@wg0 | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 wstls=$(systemctl status ws-stunnel.service | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 wsdrop=$(systemctl status ws-dropbear.service | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
@@ -245,6 +245,13 @@ else
   ss_tls="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
+# Status Service Trojan GO
+if [[ $strgo == "active" ]]; then
+  status_trgo=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+  status_trgo="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+
 # TOTAL RAM
 total_ram=` grep "MemTotal: " /proc/meminfo | awk '{ print $2}'`
 totalram=$(($total_ram/1024))
@@ -314,57 +321,16 @@ echo -e " ${blue}│ ❇️ UDP                     :$status_stunnel"
 echo -e " ${blue}│ ❇️ XRAYS Vmess TLS         :$status_tls_v2ray"
 echo -e " ${blue}│ ❇️ XRAYS Vmess None TLS    :$status_nontls_v2ray"
 echo -e " ${blue}│ ❇️ XRAYS Vmess Grpc        :$status_tls_v2ray"
-echo -e " ${blue}│ ❇️ XRAYS Vmess CDN TLS     :$status_tls_v2ray"
-echo -e " ${blue}│ ❇️ XRAYS Vmess CDN NTLS    :$status_tls_v2ray"
-echo -e " ${blue}│ ❇️ XRAYS Vmess CDN Grpc    :$status_tls_v2ray"
-echo -e " ${blue}│ ❇️ Vmess OpenClash TLS     :$status_tls_v2ray"
-echo -e " ${blue}│ ❇️ Vmess OpenClash NTLS    :$status_tls_v2ray"
-echo -e " ${blue}│ ❇️ Vmess OpenClash GRPC    :$status_tls_v2ray"
 echo -e " ${blue}│ ❇️ XRAYS Vless TLS         :$status_tls_vless"
 echo -e " ${blue}│ ❇️ XRAYS Vless None TLS    :$status_nontls_vless"
 echo -e " ${blue}│ ❇️ XRAYS Vless Grpc        :$status_tls_vless"
-echo -e " ${blue}│ ❇️ XRAYS Vless CDN TLS     :$status_tls_v2ray"
-echo -e " ${blue}│ ❇️ XRAYS Vless CDN NTLS    :$status_tls_v2ray"
-echo -e " ${blue}│ ❇️ XRAYS Vless CDN Grpc    :$status_tls_v2ray"
-echo -e " ${blue}│ ❇️ Vless OpenClash TLS     :$status_tls_v2ray"
-echo -e " ${blue}│ ❇️ Vless OpenClash NTLS    :$status_tls_v2ray"
-echo -e " ${blue}│ ❇️ Vless OpenClash GRPC    :$status_tls_v2ray"
 echo -e " ${blue}│ ❇️ XRAYS Trojan TLS        :$status_virus_trojan"
 echo -e " ${blue}│ ❇️ XRAYS Trojan None TLS   :$status_virus_trojan"
 echo -e " ${blue}│ ❇️ XRAYS Trojan Grpc       :$status_virus_trojan"
-echo -e " ${blue}│ ❇️ XRAYS Trojan CDN TLS    :$status_tls_vless"
-echo -e " ${blue}│ ❇️ XRAYS Trojan CDN NTLS   :$status_nontls_vless"
-echo -e " ${blue}│ ❇️ XRAYS Trojan CDN Grpc   :$status_tls_vless"
-echo -e " ${blue}│ ❇️ Trojan OpenClash TLS    :$status_tls_v2ray"
-echo -e " ${blue}│ ❇️ Trojan OpenClash NTLS   :$status_tls_v2ray"
-echo -e " ${blue}│ ❇️ Trojan OpenClash GRPC   :$status_tls_v2ray"
 echo -e " ${blue}│ ❇️ XRAYS Shadowshokes TLS  :$ss_tls"
 echo -e " ${blue}│ ❇️ XRAYS Shadowshokes None :$ss_tls"
 echo -e " ${blue}│ ❇️ XRAYS Shadowshokes Grpc :$ss_tls"
-echo -e " ${blue}│ ❇️ CDN Shadowshokes TLS    :$ss_tls"
-echo -e " ${blue}│ ❇️ CDN Shadowshokes None   :$ss_tls"
-echo -e " ${blue}│ ❇️ CDN Shadowshokes Grpc   :$ss_tls"
-echo -e " ${blue}│ ❇️ Clash Shadowshokes TLS  :$ss_tls"
-echo -e " ${blue}│ ❇️ Clash Shadowshokes None :$ss_tls"
-echo -e " ${blue}│ ❇️ Clash Shadowshokes Grpc :$ss_tls"
-echo -e " ${blue}│ ❇️ XRAYS Shadowshokes2022 TLS:$ss_tls"
-echo -e " ${blue}│ ❇️ XRAYS Shadowshokes2022 Nonn:$ss_tls"
-echo -e " ${blue}│ ❇️ XRAYS Shadowshokes2022 Grpc:$ss_tls"
-echo -e " ${blue}│ ❇️ CDN Shadowshokes2022 TLS:$ss_tls"
-echo -e " ${blue}│ ❇️ CDN Shadowshokes2022 None:$ss_tls"
-echo -e " ${blue}│ ❇️ CDN Shadowshokes2022 Grpc:$ss_tls"
-echo -e " ${blue}│ ❇️ Clash Shadowshokes2022 TLS:$ss_tls"
-echo -e " ${blue}│ ❇️ Clash Shadowshokes2023 None:$ss_tls"
-echo -e " ${blue}│ ❇️ Clash Shadowshokes2023 Grpc:$ss_tls"
-echo -e " ${blue}│ ❇️ XRAYS Sokes5 TLS        :$ss_tls"
-echo -e " ${blue}│ ❇️ XRAYS Sokes5 None       :$ss_tls"
-echo -e " ${blue}│ ❇️ XRAYS Sokes5 Grpc       :$ss_tls"
-echo -e " ${blue}│ ❇️ CDN Sokes5 TLS          :$ss_tls"
-echo -e " ${blue}│ ❇️ CDN Sokes5 None         :$ss_tls"
-echo -e " ${blue}│ ❇️ CDN Sokes5 Grpc         :$ss_tls"
-echo -e " ${blue}│ ❇️ Clash Sokes5 TLS        :$ss_tls"
-echo -e " ${blue}│ ❇️ Clash Sokes5 None       :$ss_tls"
-echo -e " ${blue}│ ❇️ Clash Sokes5 Grpc       :$ss_tls"
+echo -e " ${blue}│ ❇️ Trojan GO               :$status_trgo"
 echo -e " ${blue}│ ❇️ Websocket TLS           :$swstls"
 echo -e " ${blue}│ ❇️ Websocket None TLS      :$swsdrop"
 echo -e " ${blue}│ ❇️ Websocket SSL           :$swsdrop"
