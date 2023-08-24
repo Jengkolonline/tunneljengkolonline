@@ -83,7 +83,8 @@ echo -e " \033[34m│\e[0m [\e[36m•28\e[0m] Install Proxy VPN"
 echo -e " \033[34m│\e[0m [\e[36m•29\e[0m] Install UDP Costum"
 echo -e " \033[34m│\e[0m [\e[36m•30\e[0m] Install VPN"
 echo -e " \033[34m│\e[0m [\e[36m•31\e[0m] Install OHP VPN"
-echo -e " \033[34m│\e[0m [\e[36m•32\e[0m] Monitor Server"
+echo -e " \033[34m│\e[0m [\e[36m•32\e[0m] Install Install Proxy OpenVPN"
+echo -e " \033[34m│\e[0m [\e[36m•33\e[0m] Monitor Server"
 echo -e " \033[34m╰══════════════════════════════════════════════════════════╯${NC}"
 echo -e " \033[31m##########\033[33m##########\033[32m##########\033[34m##########\033[35m##########\033[36m##########\e[0m"
 echo -e ""
@@ -125,7 +126,8 @@ case $opt in
 29) clear ; wget --load-cookies /tmp/cookies.txt ${UDPCORE} -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp ;;
 30) clear ; wget https://raw.githubusercontent.com/Jengkolonline/vpn/main/vpn.sh && chmod +x vpn.sh && ./vpn.sh ;;
 31) clear ; wget https://raw.githubusercontent.com/Jengkolonline/vpn/main/ohpsetup.sh && chmod +x ohpsetup.sh && ./ohpsetup.sh ;;
-32) clear ; gotop ;;
+32) clear ; wget https://raw.githubusercontent.com/Jengkolonline/tunneljengkolonline/main/sshws/openvpn.sh && chmod +x openvpn.sh && ./openvpn.sh ;;
+33) clear ; gotop ;;
 0) clear ; menu ; exit ;;
 x) exit ;;
 *) echo -e "" ; echo "Anda salah tekan" ; sleep 1 ; menu ;;
