@@ -67,7 +67,7 @@ vmess=$(cat /etc/vmess/.vmess.db | wc -l)
 vless=$(cat /etc/vless/.vless.db | wc -l)
 trojan=$(cat /etc/trojan/.trojan.db | wc -l)
 ss=$(cat /etc/shadowsocks/.shadowsocks.db | wc -l)
-trgo=$(cat /etc/trojangi/.trojango.db | wc -l) 
+trgo=$(cat /etc/trojango/.trojango.db | wc -l) 
 total_ssh="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
 cpu_usage1="$(ps aux | awk 'BEGIN {sum=0} {sum+=$3}; END {print sum}')"
 cpu_usage="$((${cpu_usage1/\.*} / ${corediilik:-1}))"
